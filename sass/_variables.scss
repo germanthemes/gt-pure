@@ -25,9 +25,8 @@ $themeColors: (
 	--link-hover-color        : #003344,
 	--button-color            : rgba(0, 0, 0, 0.9),
 	--button-hover-color      : #003344,
-	--navi-color              : rgba(0, 0, 0, 0.9),
-	--navi-hover-color        : rgba(0, 0, 0, 0.5),
-	--navi-border-color       : rgba(0, 0, 0, 0.1),
+	--navi-color              : #757575,
+	--navi-hover-color        : #151515,
 	--title-color             : rgba(0, 0, 0, 0.9),
 	--title-hover-color       : #c9493b,
 	--footer-background-color : rgba(0, 0, 0, 0.9),
@@ -49,7 +48,7 @@ $themeFonts: (
 // Font Weight.
 $fontWeight: (
 	--title-font-weight : bold,
-	--navi-font-weight  : normal,
+	--navi-font-weight  : bold,
 );
 
 // Text Transform.

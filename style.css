@@ -55,9 +55,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--link-hover-color: #003344;
 	--button-color: rgba(0, 0, 0, 0.9);
 	--button-hover-color: #003344;
-	--navi-color: rgba(0, 0, 0, 0.9);
-	--navi-hover-color: rgba(0, 0, 0, 0.5);
-	--navi-border-color: rgba(0, 0, 0, 0.1);
+	--navi-color: #757575;
+	--navi-hover-color: #151515;
 	--title-color: rgba(0, 0, 0, 0.9);
 	--title-hover-color: #c9493b;
 	--footer-background-color: rgba(0, 0, 0, 0.9);
@@ -69,7 +68,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--title-font: "Barlow", arial, helvetica, sans-serif;
 	--navi-font: "Barlow", arial, helvetica, sans-serif;
 	--title-font-weight: bold;
-	--navi-font-weight: normal;
+	--navi-font-weight: bold;
 	--title-text-transform: none;
 	--navi-text-transform: none;
 }
@@ -786,7 +785,7 @@ textarea {
 	display: block;
 	margin: 0;
 	padding: 0;
-	color: rgba(0, 0, 0, 0.5);
+	color: #151515;
 	color: var(--navi-hover-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
@@ -817,14 +816,14 @@ textarea {
 .main-navigation ul {
 	margin: 0;
 	padding: 0;
-	color: rgba(0, 0, 0, 0.9);
+	color: #757575;
 	color: var(--navi-color);
 	list-style: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--navi-font);
-	font-weight: normal;
+	font-weight: bold;
 	font-weight: var(--navi-font-weight);
 	text-transform: none;
 	text-transform: var(--navi-text-transform);
@@ -832,6 +831,7 @@ textarea {
 
 .main-navigation > ul {
 	margin-top: 1.5rem;
+	margin-left: 1.5rem;
 }
 
 /* Hide the menu on small screens when JavaScript is available. */
@@ -856,14 +856,12 @@ textarea {
 	display: block;
 	margin: 0;
 	padding: 1rem;
-	border-top: 2px solid rgba(0, 0, 0, 0.1);
-	border-top: 2px solid var(--navi-border-color);
 	text-decoration: none;
 }
 
 .main-navigation ul a:link,
 .main-navigation ul a:visited {
-	color: rgba(0, 0, 0, 0.9);
+	color: #757575;
 	color: var(--navi-color);
 	text-decoration: none;
 }
@@ -871,11 +869,13 @@ textarea {
 .main-navigation ul a:hover,
 .main-navigation ul a:active,
 .main-navigation ul a:focus {
-	color: rgba(0, 0, 0, 0.5);
+	color: #151515;
 	color: var(--navi-hover-color);
 }
 
 .main-navigation ul li.current-menu-item > a {
+	color: #151515;
+	color: var(--navi-hover-color);
 	text-decoration: underline;
 }
 
@@ -909,14 +909,14 @@ textarea {
 	padding: 1rem;
 	border: none;
 	background: none;
-	color: rgba(0, 0, 0, 0.9);
-	color: var(--navi-color);
+	color: #151515;
+	color: var(--navi-hover-color);
 	text-decoration: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--navi-font);
-	font-weight: normal;
+	font-weight: bold;
 	font-weight: var(--navi-font-weight);
 	text-transform: none;
 	text-transform: var(--navi-text-transform);
@@ -929,15 +929,15 @@ textarea {
 
 .menu-toggle:focus {
 	outline: thin dotted;
-	color: rgba(0, 0, 0, 0.9);
-	color: var(--navi-color);
+	color: #151515;
+	color: var(--navi-hover-color);
 	background: none;
 }
 
 .menu-toggle:hover,
 .menu-toggle:active {
-	color: rgba(0, 0, 0, 0.5);
-	color: var(--navi-hover-color);
+	color: #757575;
+	color: var(--navi-color);
 	background: none;
 	cursor: pointer;
 }
@@ -947,14 +947,14 @@ textarea {
 	width: 28px;
 	height: 28px;
 	vertical-align: top;
-	fill: rgba(0, 0, 0, 0.9);
-	fill: var(--navi-color);
+	fill: #151515;
+	fill: var(--navi-hover-color);
 }
 
 .menu-toggle:hover .icon,
 .menu-toggle:active .icon {
-	fill: rgba(0, 0, 0, 0.5);
-	fill: var(--navi-hover-color);
+	fill: #757575;
+	fill: var(--navi-color);
 }
 
 .toggled-on .menu-toggle .icon-menu,
@@ -979,7 +979,7 @@ textarea {
 
 .dropdown-toggle:focus {
 	outline: thin dotted;
-	color: rgba(0, 0, 0, 0.9);
+	color: #757575;
 	color: var(--navi-color);
 	background: none;
 }
@@ -994,14 +994,14 @@ textarea {
 	width: 20px;
 	height: 20px;
 	vertical-align: top;
-	fill: rgba(0, 0, 0, 0.9);
+	fill: #757575;
 	fill: var(--navi-color);
 }
 
 .dropdown-toggle:hover .icon,
 .dropdown-toggle:active .icon,
 .dropdown-toggle:focus .icon {
-	fill: rgba(0, 0, 0, 0.5);
+	fill: #151515;
 	fill: var(--navi-hover-color);
 }
 
@@ -1257,7 +1257,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	font-size: 1rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--navi-font);
-	font-weight: normal;
+	font-weight: bold;
 	font-weight: var(--navi-font-weight);
 	text-transform: none;
 	text-transform: var(--navi-text-transform);
@@ -1385,7 +1385,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	font-size: 1.25rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--navi-font);
-	font-weight: normal;
+	font-weight: bold;
 	font-weight: var(--navi-font-weight);
 	text-transform: none;
 	text-transform: var(--navi-text-transform);
@@ -2144,31 +2144,17 @@ object {
 		border-bottom: none;
 	}
 
-	.main-navigation > ul > li {
-		padding: 0.8rem 1rem;
-	}
-
-	.main-navigation > ul > li > a {
-		padding: 0.2rem 0;
-		border: none;
-		border-bottom: 2px solid transparent;
-	}
-
-	.main-navigation > ul > li.current-menu-item > a {
-		text-decoration: none;
-		border-color: rgba(255, 255, 255, 0.5);
-		border-color: var(--navi-hover-color);
-	}
-
 	/* Dropdown Menus */
 	.main-navigation ul ul {
 		position: absolute;
 		left: -999em;
 		top: 100%;
 		z-index: 99999;
-		padding: 0.5rem;
-		border: 2px solid rgba(0, 0, 0, 0.1);
-		border: 2px solid var(--navi-border-color);
+		padding: 0.5rem 0.75rem;
+		background: #fff;
+		border: 2px solid #757575;
+		border: 2px solid var(--navi-color);
+		border-radius: 4px;
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -2209,13 +2195,13 @@ object {
 		top: 0.1rem;
 		width: 14px;
 		height: 14px;
-		fill: rgba(0, 0, 0, 0.9);
+		fill: #757575;
 		fill: var(--navi-color);
 	}
 
 	.main-navigation ul .menu-item-has-children > a:hover > .icon,
 	.main-navigation ul .page_item_has_children > a:hover > .icon {
-		fill: rgba(0, 0, 0, 0.5);
+		fill: #151515;
 		fill: var(--navi-hover-color);
 	}
 

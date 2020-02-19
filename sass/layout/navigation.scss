@@ -16,6 +16,7 @@
 
 .main-navigation > ul {
 	margin-top: 1.5rem;
+	margin-left: 1.5rem;
 }
 
 /* Hide the menu on small screens when JavaScript is available. */
@@ -40,8 +41,6 @@
 	display: block;
 	margin: 0;
 	padding: 1rem;
-	border-top: 2px solid rgba(0, 0, 0, 0.1);
-	border-top: 2px solid var(--navi-border-color);
 	text-decoration: none;
 }
 
@@ -58,6 +57,7 @@
 }
 
 .main-navigation ul li.current-menu-item > a {
+	@include color(--navi-hover-color);
 	text-decoration: underline;
 }
 
@@ -90,7 +90,7 @@
 	padding: 1rem;
 	border: none;
 	background: none;
-	@include color(--navi-color);
+	@include color(--navi-hover-color);
 	text-decoration: none;
 	@include font-size(17);
 	@include font-family(--navi-font);
@@ -105,13 +105,13 @@
 
 .menu-toggle:focus {
 	outline: thin dotted;
-	@include color(--navi-color);
+	@include color(--navi-hover-color);
 	background: none;
 }
 
 .menu-toggle:hover,
 .menu-toggle:active {
-	@include color(--navi-hover-color);
+	@include color(--navi-color);
 	background: none;
 	cursor: pointer;
 }
@@ -121,12 +121,12 @@
 	width: 28px;
 	height: 28px;
 	vertical-align: top;
-	@include fill(--navi-color);
+	@include fill(--navi-hover-color);
 }
 
 .menu-toggle:hover .icon,
 .menu-toggle:active .icon {
-	@include fill(--navi-hover-color);
+	@include fill(--navi-color);
 }
 
 .toggled-on .menu-toggle .icon-menu,

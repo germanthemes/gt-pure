@@ -33,31 +33,17 @@
 		border-bottom: none;
 	}
 
-	.main-navigation > ul > li {
-		padding: 0.8rem 1rem;
-	}
-
-	.main-navigation > ul > li > a {
-		padding: 0.2rem 0;
-		border: none;
-		border-bottom: 2px solid transparent;
-	}
-
-	.main-navigation > ul > li.current-menu-item > a {
-		text-decoration: none;
-		border-color: rgba(255, 255, 255, 0.5);
-		border-color: var(--navi-hover-color);
-	}
-
 	/* Dropdown Menus */
 	.main-navigation ul ul {
 		position: absolute;
 		left: -999em;
 		top: 100%;
 		z-index: 99999;
-		padding: 0.5rem;
-		border: 2px solid rgba(0, 0, 0, 0.1);
-		border: 2px solid var(--navi-border-color);
+		padding: 0.5rem 0.75rem;
+		background: #fff;
+		border: 2px solid #757575;
+		border: 2px solid var(--navi-color);
+		border-radius: 4px;
 	}
 
 	.main-navigation ul ul li:hover > ul,
