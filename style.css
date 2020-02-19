@@ -53,15 +53,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--dark-gray-color: #242424;
 	--link-color: #268f97;
 	--link-hover-color: #003344;
-	--button-color: #268f97;
+	--button-color: rgba(0, 0, 0, 0.9);
 	--button-hover-color: #003344;
-	--header-background-color: #003344;
-	--header-text-color: rgba(255, 255, 255, 0.95);
-	--header-text-hover-color: rgba(255, 255, 255, 0.5);
-	--header-border-color: rgba(255, 255, 255, 0.1);
-	--title-color: #003344;
-	--title-hover-color: #268f97;
-	--footer-background-color: #003344;
+	--navi-color: rgba(0, 0, 0, 0.9);
+	--navi-hover-color: rgba(0, 0, 0, 0.5);
+	--navi-border-color: rgba(0, 0, 0, 0.1);
+	--title-color: rgba(0, 0, 0, 0.9);
+	--title-hover-color: #c9493b;
+	--footer-background-color: rgba(0, 0, 0, 0.9);
 	--footer-text-color: rgba(255, 255, 255, 0.5);
 	--footer-link-color: rgba(255, 255, 255, 0.95);
 	--footer-link-hover-color: rgba(255, 255, 255, 0.5);
@@ -543,7 +542,7 @@ input[type="submit"] {
 	margin: 0;
 	padding: 0.6em 1.2em;
 	background: none;
-	color: #268f97;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--button-color);
 	border: 2px solid currentColor;
 	text-decoration: none;
@@ -718,8 +717,6 @@ textarea {
 # - Header
 --------------------------------------------------------------*/
 .site-header {
-	background-color: #003344;
-	background-color: var(--header-background-color);
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 }
@@ -759,38 +756,38 @@ textarea {
 .site-title {
 	margin: 0;
 	padding: 0;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--title-color);
 	text-decoration: none;
 	font-size: 24px;
 	font-size: 1.5rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
-	font-family: var(--navi-font);
-	font-weight: normal;
-	font-weight: var(--navi-font-weight);
+	font-family: var(--title-font);
+	font-weight: bold;
+	font-weight: var(--title-font-weight);
 	text-transform: none;
-	text-transform: var(--navi-text-transform);
+	text-transform: var(--title-text-transform);
 	line-height: 1.4;
 }
 
 .site-title a:link,
 .site-title a:visited {
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--title-color);
 }
 
 .site-title a:hover,
 .site-title a:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
+	color: #c9493b;
+	color: var(--title-hover-color);
 }
 
 .site-description {
 	display: block;
 	margin: 0;
 	padding: 0;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
 }
@@ -820,8 +817,8 @@ textarea {
 .main-navigation ul {
 	margin: 0;
 	padding: 0;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--navi-color);
 	list-style: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
@@ -859,23 +856,23 @@ textarea {
 	display: block;
 	margin: 0;
 	padding: 1rem;
-	border-top: 2px solid rgba(255, 255, 255, 0.1);
-	border-top: 2px solid var(--header-border-color);
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
+	border-top: 2px solid var(--navi-border-color);
 	text-decoration: none;
 }
 
 .main-navigation ul a:link,
 .main-navigation ul a:visited {
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--navi-color);
 	text-decoration: none;
 }
 
 .main-navigation ul a:hover,
 .main-navigation ul a:active,
 .main-navigation ul a:focus {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
+	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 }
 
 .main-navigation ul li.current-menu-item > a {
@@ -886,8 +883,6 @@ textarea {
 .main-navigation ul ul {
 	font-size: 16px;
 	font-size: 1rem;
-	background-color: #003344;
-	background-color: var(--header-background-color);
 }
 
 .main-navigation ul ul.toggled-on {
@@ -914,8 +909,8 @@ textarea {
 	padding: 1rem;
 	border: none;
 	background: none;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--navi-color);
 	text-decoration: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
@@ -934,15 +929,15 @@ textarea {
 
 .menu-toggle:focus {
 	outline: thin dotted;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--navi-color);
 	background: none;
 }
 
 .menu-toggle:hover,
 .menu-toggle:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--header-text-hover-color);
+	color: rgba(0, 0, 0, 0.5);
+	color: var(--navi-hover-color);
 	background: none;
 	cursor: pointer;
 }
@@ -952,14 +947,14 @@ textarea {
 	width: 28px;
 	height: 28px;
 	vertical-align: top;
-	fill: rgba(255, 255, 255, 0.95);
-	fill: var(--header-text-color);
+	fill: rgba(0, 0, 0, 0.9);
+	fill: var(--navi-color);
 }
 
 .menu-toggle:hover .icon,
 .menu-toggle:active .icon {
-	fill: rgba(255, 255, 255, 0.5);
-	fill: var(--header-text-hover-color);
+	fill: rgba(0, 0, 0, 0.5);
+	fill: var(--navi-hover-color);
 }
 
 .toggled-on .menu-toggle .icon-menu,
@@ -984,8 +979,8 @@ textarea {
 
 .dropdown-toggle:focus {
 	outline: thin dotted;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--header-text-color);
+	color: rgba(0, 0, 0, 0.9);
+	color: var(--navi-color);
 	background: none;
 }
 
@@ -999,15 +994,15 @@ textarea {
 	width: 20px;
 	height: 20px;
 	vertical-align: top;
-	fill: rgba(255, 255, 255, 0.95);
-	fill: var(--header-text-color);
+	fill: rgba(0, 0, 0, 0.9);
+	fill: var(--navi-color);
 }
 
 .dropdown-toggle:hover .icon,
 .dropdown-toggle:active .icon,
 .dropdown-toggle:focus .icon {
-	fill: rgba(255, 255, 255, 0.5);
-	fill: var(--header-text-hover-color);
+	fill: rgba(0, 0, 0, 0.5);
+	fill: var(--navi-hover-color);
 }
 
 .dropdown-toggle.toggled-on .icon {
@@ -1116,7 +1111,7 @@ textarea {
 .entry-title {
 	margin: 0;
 	padding: 0;
-	color: #003344;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--title-color);
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1133,14 +1128,14 @@ textarea {
 
 .entry-title a:link,
 .entry-title a:visited {
-	color: #003344;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--title-color);
 	text-decoration: none;
 }
 
 .entry-title a:hover,
 .entry-title a:active {
-	color: #268f97;
+	color: #c9493b;
 	color: var(--title-hover-color);
 }
 
@@ -1195,7 +1190,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 .more-link {
 	display: inline-block;
 	padding: 0.6em 1.2em;
-	color: #268f97;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--button-color);
 	border: 2px solid currentColor;
 	font-size: 14px;
@@ -1205,7 +1200,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 
 .more-link:link,
 .more-link:visited {
-	color: #268f97;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--button-color);
 	text-decoration: none;
 }
@@ -1233,7 +1228,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	padding: 0.3em 0.9em;
 	text-align: center;
 	text-decoration: none;
-	color: #268f97;
+	color: rgba(0, 0, 0, 0.9);
 	color: var(--button-color);
 	border: 2px solid currentColor;
 }
@@ -1313,7 +1308,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	font-size: 1.0625rem;
 	color: rgba(255, 255, 255, 0.5);
 	color: var(--footer-text-color);
-	background-color: #003344;
+	background-color: rgba(0, 0, 0, 0.9);
 	background-color: var(--footer-background-color);
 }
 
@@ -2162,7 +2157,7 @@ object {
 	.main-navigation > ul > li.current-menu-item > a {
 		text-decoration: none;
 		border-color: rgba(255, 255, 255, 0.5);
-		border-color: var(--header-text-hover-color);
+		border-color: var(--navi-hover-color);
 	}
 
 	/* Dropdown Menus */
@@ -2172,8 +2167,8 @@ object {
 		top: 100%;
 		z-index: 99999;
 		padding: 0.5rem;
-		border: 2px solid rgba(255, 255, 255, 0.1);
-		border: 2px solid var(--header-border-color);
+		border: 2px solid rgba(0, 0, 0, 0.1);
+		border: 2px solid var(--navi-border-color);
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -2214,14 +2209,14 @@ object {
 		top: 0.1rem;
 		width: 14px;
 		height: 14px;
-		fill: rgba(255, 255, 255, 0.95);
-		fill: var(--header-text-color);
+		fill: rgba(0, 0, 0, 0.9);
+		fill: var(--navi-color);
 	}
 
 	.main-navigation ul .menu-item-has-children > a:hover > .icon,
 	.main-navigation ul .page_item_has_children > a:hover > .icon {
-		fill: rgba(255, 255, 255, 0.5);
-		fill: var(--header-text-hover-color);
+		fill: rgba(0, 0, 0, 0.5);
+		fill: var(--navi-hover-color);
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a > .icon,

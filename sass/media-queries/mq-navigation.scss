@@ -46,7 +46,7 @@
 	.main-navigation > ul > li.current-menu-item > a {
 		text-decoration: none;
 		border-color: rgba(255, 255, 255, 0.5);
-		border-color: var(--header-text-hover-color);
+		border-color: var(--navi-hover-color);
 	}
 
 	/* Dropdown Menus */
@@ -56,8 +56,8 @@
 		top: 100%;
 		z-index: 99999;
 		padding: 0.5rem;
-		border: 2px solid rgba(255, 255, 255, 0.1);
-		border: 2px solid var(--header-border-color);
+		border: 2px solid rgba(0, 0, 0, 0.1);
+		border: 2px solid var(--navi-border-color);
 	}
 
 	.main-navigation ul ul li:hover > ul,
@@ -98,12 +98,12 @@
 		top: 0.1rem;
 		width: 14px;
 		height: 14px;
-		@include fill(--header-text-color);
+		@include fill(--navi-color);
 	}
 
 	.main-navigation ul .menu-item-has-children > a:hover > .icon,
 	.main-navigation ul .page_item_has_children > a:hover > .icon {
-		@include fill(--header-text-hover-color);
+		@include fill(--navi-hover-color);
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a > .icon,
