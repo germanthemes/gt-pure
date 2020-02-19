@@ -4,9 +4,10 @@ input[type="reset"],
 input[type="submit"] {
 	margin: 0;
 	padding: 0.6em 1.2em;
-	background: none;
-	@include color(--button-color);
-	border: 2px solid currentColor;
+	border: none;
+	border-radius: 5px;
+	@include color(--button-text-color);
+	@include background(--button-color);
 	text-decoration: none;
 	font-weight: bold;
 	@include font-size(15);
@@ -24,7 +25,8 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	@include color(--button-hover-color);
+	@include color(--button-text-hover-color);
+	@include background(--button-hover-color);
 	text-decoration: none;
 }
 
@@ -36,7 +38,8 @@ input[type="search"],
 textarea {
 	padding: 0.3em 0.6em;
 	max-width: 100%;
-	border: 2px solid rgba(0,0,0,0.1);
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
 	background: none;
 	color: #777;
 }
@@ -47,7 +50,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-	border: 2px solid rgba(0,0,0,0.3);
+	border: 2px solid rgba(0, 0, 0, 0.3);
 	color: $textColor;
 	outline: none;
 }
@@ -57,7 +60,6 @@ textarea {
 }
 
 /* Search Form */
-/* Theme Search Widget */
 .search-form {
 	display: flex;
 	margin: 0;
