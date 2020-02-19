@@ -134,6 +134,16 @@ add_action( 'wp_enqueue_scripts', 'gt_drive_scripts' );
 
 
 /**
+* Enqueue theme fonts.
+*/
+function gt_drive_theme_fonts() {
+	wp_enqueue_style( 'gt-drive-theme-fonts', get_template_directory_uri() . '/assets/css/theme-fonts.css', array(), '20200219' );
+}
+add_action( 'wp_enqueue_scripts', 'gt_drive_theme_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'gt_drive_theme_fonts', 1 );
+
+
+/**
  * Register widget areas and custom widgets.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
