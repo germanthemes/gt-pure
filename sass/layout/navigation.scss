@@ -15,8 +15,7 @@
 }
 
 .main-navigation > ul {
-	margin-top: 1.5rem;
-	margin-left: 1.5rem;
+	margin: 1rem 0;
 }
 
 /* Hide the menu on small screens when JavaScript is available. */
@@ -40,7 +39,7 @@
 .main-navigation ul a {
 	display: block;
 	margin: 0;
-	padding: 1rem;
+	padding: 1rem 0;
 	text-decoration: none;
 }
 
@@ -161,9 +160,9 @@
 }
 
 .dropdown-toggle .icon {
-	margin: 0.35em 0 0;
-	width: 20px;
-	height: 20px;
+	margin: 0.3em 0 0;
+	width: 19px;
+	height: 19px;
 	vertical-align: top;
 	@include fill(--header-text-color);
 }
