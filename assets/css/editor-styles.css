@@ -15,16 +15,16 @@
 	--light-gray-color: #e4e4e4;
 	--gray-color: #848484;
 	--dark-gray-color: #242424;
-	--link-color: #268f97;
-	--link-hover-color: #003344;
-	--button-color: #757575;
+	--link-color: #e36355;
+	--link-hover-color: #c9493b;
+	--button-color: #e36355;
 	--button-text-color: #fff;
 	--button-hover-color: #151515;
 	--button-text-hover-color: #fff;
-	--navi-color: #757575;
-	--navi-hover-color: #151515;
+	--header-text-color: #757575;
+	--header-hover-color: #151515;
 	--title-color: #151515;
-	--title-hover-color: #757575;
+	--title-hover-color: #e36355;
 	--footer-background-color: #151515;
 	--footer-text-color: rgba(255, 255, 255, 0.5);
 	--footer-link-color: rgba(255, 255, 255, 0.95);
@@ -155,7 +155,7 @@ body.gt-page-title-hidden.block-editor-page .edit-post-visual-editor .editor-pos
 }
 
 .editor-styles-wrapper a {
-	color: #268f97;
+	color: #e36355;
 	color: var(--link-color);
 }
 

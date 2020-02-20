@@ -51,16 +51,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--light-gray-color: #e4e4e4;
 	--gray-color: #848484;
 	--dark-gray-color: #242424;
-	--link-color: #268f97;
-	--link-hover-color: #003344;
-	--button-color: #757575;
+	--link-color: #e36355;
+	--link-hover-color: #c9493b;
+	--button-color: #e36355;
 	--button-text-color: #fff;
 	--button-hover-color: #151515;
 	--button-text-hover-color: #fff;
-	--navi-color: #757575;
-	--navi-hover-color: #151515;
+	--header-text-color: #757575;
+	--header-hover-color: #151515;
 	--title-color: #151515;
-	--title-hover-color: #757575;
+	--title-hover-color: #e36355;
 	--footer-background-color: #151515;
 	--footer-text-color: rgba(255, 255, 255, 0.5);
 	--footer-link-color: rgba(255, 255, 255, 0.95);
@@ -511,7 +511,7 @@ td {
 }
 
 a {
-	color: #268f97;
+	color: #e36355;
 	color: var(--link-color);
 	text-decoration: underline;
 }
@@ -519,7 +519,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-	color: #003344;
+	color: #c9493b;
 	color: var(--link-hover-color);
 	text-decoration: none;
 }
@@ -546,7 +546,7 @@ input[type="submit"] {
 	border-radius: 5px;
 	color: #fff;
 	color: var(--button-text-color);
-	background-color: #757575;
+	background-color: #e36355;
 	background-color: var(--button-color);
 	text-decoration: none;
 	font-weight: bold;
@@ -761,7 +761,7 @@ textarea {
 	margin: 0;
 	padding: 0;
 	color: #151515;
-	color: var(--title-color);
+	color: var(--header-hover-color);
 	text-decoration: none;
 	font-size: 24px;
 	font-size: 1.5rem;
@@ -777,23 +777,24 @@ textarea {
 .site-title a:link,
 .site-title a:visited {
 	color: #151515;
-	color: var(--title-color);
+	color: var(--header-hover-color);
 }
 
 .site-title a:hover,
 .site-title a:active {
 	color: #757575;
-	color: var(--title-hover-color);
+	color: var(--header-text-color);
 }
 
 .site-description {
 	display: block;
 	margin: 0;
 	padding: 0;
-	color: #151515;
-	color: var(--navi-hover-color);
+	color: #757575;
+	color: var(--header-text-color);
 	font-size: 13px;
 	font-size: 0.8125rem;
+	font-weight: bold;
 }
 
 /* Custom Header Image */
@@ -822,7 +823,7 @@ textarea {
 	margin: 0;
 	padding: 0;
 	color: #757575;
-	color: var(--navi-color);
+	color: var(--header-text-color);
 	list-style: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
@@ -867,7 +868,7 @@ textarea {
 .main-navigation ul a:link,
 .main-navigation ul a:visited {
 	color: #757575;
-	color: var(--navi-color);
+	color: var(--header-text-color);
 	text-decoration: none;
 }
 
@@ -875,12 +876,12 @@ textarea {
 .main-navigation ul a:active,
 .main-navigation ul a:focus {
 	color: #151515;
-	color: var(--navi-hover-color);
+	color: var(--header-hover-color);
 }
 
 .main-navigation ul li.current-menu-item > a {
 	color: #151515;
-	color: var(--navi-hover-color);
+	color: var(--header-hover-color);
 	text-decoration: underline;
 }
 
@@ -915,7 +916,7 @@ textarea {
 	border: none;
 	background: none;
 	color: #151515;
-	color: var(--navi-hover-color);
+	color: var(--header-hover-color);
 	text-decoration: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
@@ -935,14 +936,14 @@ textarea {
 .menu-toggle:focus {
 	outline: thin dotted;
 	color: #151515;
-	color: var(--navi-hover-color);
+	color: var(--header-hover-color);
 	background: none;
 }
 
 .menu-toggle:hover,
 .menu-toggle:active {
 	color: #757575;
-	color: var(--navi-color);
+	color: var(--header-text-color);
 	background: none;
 	cursor: pointer;
 }
@@ -953,13 +954,13 @@ textarea {
 	height: 28px;
 	vertical-align: top;
 	fill: #151515;
-	fill: var(--navi-hover-color);
+	fill: var(--header-hover-color);
 }
 
 .menu-toggle:hover .icon,
 .menu-toggle:active .icon {
 	fill: #757575;
-	fill: var(--navi-color);
+	fill: var(--header-text-color);
 }
 
 .toggled-on .menu-toggle .icon-menu,
@@ -985,7 +986,7 @@ textarea {
 .dropdown-toggle:focus {
 	outline: thin dotted;
 	color: #757575;
-	color: var(--navi-color);
+	color: var(--header-text-color);
 	background: none;
 }
 
@@ -1000,14 +1001,14 @@ textarea {
 	height: 20px;
 	vertical-align: top;
 	fill: #757575;
-	fill: var(--navi-color);
+	fill: var(--header-text-color);
 }
 
 .dropdown-toggle:hover .icon,
 .dropdown-toggle:active .icon,
 .dropdown-toggle:focus .icon {
 	fill: #151515;
-	fill: var(--navi-hover-color);
+	fill: var(--header-hover-color);
 }
 
 .dropdown-toggle.toggled-on .icon {
@@ -1140,7 +1141,7 @@ textarea {
 
 .entry-title a:hover,
 .entry-title a:active {
-	color: #757575;
+	color: #e36355;
 	color: var(--title-hover-color);
 }
 
@@ -1197,7 +1198,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	padding: 0.6em 1.2em;
 	color: #fff;
 	color: var(--button-text-color);
-	background-color: #757575;
+	background-color: #e36355;
 	background-color: var(--button-color);
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -1209,7 +1210,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 .more-link:visited {
 	color: #fff;
 	color: var(--button-text-color);
-	background-color: #757575;
+	background-color: #e36355;
 	background-color: var(--button-color);
 	text-decoration: none;
 }
@@ -1241,7 +1242,7 @@ body.tags-hidden.single-post .type-post .entry-tags {
 	text-decoration: none;
 	color: #fff;
 	color: var(--button-text-color);
-	background-color: #757575;
+	background-color: #e36355;
 	background-color: var(--button-color);
 	border-radius: 5px;
 }
@@ -2210,13 +2211,13 @@ object {
 		width: 14px;
 		height: 14px;
 		fill: #757575;
-		fill: var(--navi-color);
+		fill: var(--header-text-color);
 	}
 
 	.main-navigation ul .menu-item-has-children > a:hover > .icon,
 	.main-navigation ul .page_item_has_children > a:hover > .icon {
 		fill: #151515;
-		fill: var(--navi-hover-color);
+		fill: var(--header-hover-color);
 	}
 
 	.main-navigation ul ul .menu-item-has-children > a > .icon,

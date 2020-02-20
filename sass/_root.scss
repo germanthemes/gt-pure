@@ -12,8 +12,8 @@
 	@include variable(--button-text-color, $themeColors);
 	@include variable(--button-hover-color, $themeColors);
 	@include variable(--button-text-hover-color, $themeColors);
-	@include variable(--navi-color, $themeColors);
-	@include variable(--navi-hover-color, $themeColors);
+	@include variable(--header-text-color, $themeColors);
+	@include variable(--header-hover-color, $themeColors);
 	@include variable(--title-color, $themeColors);
 	@include variable(--title-hover-color, $themeColors);
 	@include variable(--footer-background-color, $themeColors);
