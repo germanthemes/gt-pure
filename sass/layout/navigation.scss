@@ -84,9 +84,8 @@
 
 /* Main Navigation Toggle */
 .menu-toggle {
-	display: block;
+	display: flex;
 	margin: 0;
-	margin-left: auto;
 	padding: 1rem;
 	border: none;
 	background: none;
@@ -97,6 +96,7 @@
 	@include font-weight(--navi-font-weight);
 	@include text-transform(--navi-text-transform);
 	text-align: left;
+	align-items: center;
 }
 
 .menu-toggle .menu-toggle-text {

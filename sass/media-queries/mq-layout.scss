@@ -2,13 +2,17 @@
 	.site-header,
 	.site-content,
 	.footer-main {
-		padding-left: 1.5rem;
-		padding-right: 1.5rem;
+		padding-left: 1.75rem;
+		padding-right: 1.75rem;
 	}
 
 	.site-header {
-		padding-top: 0.75rem;
-		padding-bottom: 0.75rem;
+		padding-top: 1.25rem;
+		padding-bottom: 1.25rem;
+	}
+
+	.site-description {
+		display: block;
 	}
 
 	.site-content {
@@ -58,13 +62,13 @@
 	.site-header,
 	.site-content,
 	.footer-main {
-		padding-left: 1.75rem;
-		padding-right: 1.75rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 
 	.site-header {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
 	}
 
 	.site-content,
@@ -115,13 +119,13 @@
 	.site-header,
 	.site-content,
 	.footer-main {
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding-left: 2.25rem;
+		padding-right: 2.25rem;
 	}
 
 	.site-header {
-		padding-top: 1.25rem;
-		padding-bottom: 1.25rem;
+		padding-top: 1.75rem;
+		padding-bottom: 1.75rem;
 	}
 
 	.site-content,
@@ -178,20 +182,20 @@
 	.site-header,
 	.site-content,
 	.footer-main {
-		padding-left: 2.25rem;
-		padding-right: 2.25rem;
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
 	}
 
 	.site-header {
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
 	}
 
 	.site-content,
 	.site-footer {
 		padding-top: 4rem;
 	}
-	
+
 	.type-post,
 	.type-page,
 	.type-attachment,
@@ -201,7 +205,7 @@
 
 	.entry-header,
 	.post-image {
-    	margin-bottom: 2rem;
+		margin-bottom: 2rem;
 	}
 
 	/* Footer Widgets */
@@ -209,7 +213,7 @@
 		padding-left: 2rem;
 		padding-right: 2rem;
 	}
-	
+
 	.footer-widgets .widget {
 		margin-bottom: 4rem;
 	}

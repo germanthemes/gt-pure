@@ -16,6 +16,7 @@
 	max-width: 100%;
 	flex-direction: column;
 	justify-content: center;
+	flex-grow: 1;
 }
 
 .site-branding a:link,
@@ -58,7 +59,7 @@
 }
 
 .site-description {
-	display: block;
+	display: none;
 	margin: 0;
 	padding: 0;
 	@include color(--header-text-color);

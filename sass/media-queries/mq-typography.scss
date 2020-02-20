@@ -13,7 +13,7 @@
 
 	.entry-content {
 		@include font-size(17);
-	}	
+	}
 
 	.entry-meta,
 	.more-link,
@@ -28,6 +28,14 @@
 }
 
 @media only screen and (min-width: 960px) {
+	.site-title {
+		@include font-size(32);
+	}
+
+	.site-description {
+		@include font-size(15);
+	}
+
 	.entry-title {
 		@include font-size(40);
 	}
@@ -48,6 +56,14 @@
 }
 
 @media only screen and (min-width: 1280px) {
+	.site-title {
+		@include font-size(36);
+	}
+
+	.site-description {
+		@include font-size(16);
+	}
+
 	.entry-title {
 		@include font-size(48);
 	}
