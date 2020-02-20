@@ -1,7 +1,13 @@
 .entry-meta {
-	margin: 0.35rem 0 0;
-	color: rgba(0,0,0,0.5);
+	margin: 1rem 0 0;
+	color: rgba(0, 0, 0, 0.4);
 	@include font-size(14);
+	font-weight: bold;
+}
+
+.entry-meta a:link,
+.entry-meta a:visited {
+	text-decoration: none;
 }
 
 .entry-meta .updated:not(.published) {

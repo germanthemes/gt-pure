@@ -772,7 +772,7 @@ textarea {
 	font-weight: var(--title-font-weight);
 	text-transform: none;
 	text-transform: var(--title-text-transform);
-	line-height: 1.4;
+	line-height: 1.25;
 }
 
 .site-title a:link,
@@ -1122,15 +1122,15 @@ textarea {
 	color: var(--title-color);
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 28px;
+	font-size: 1.75rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--title-font);
 	font-weight: bold;
 	font-weight: var(--title-font-weight);
 	text-transform: none;
 	text-transform: var(--title-text-transform);
-	line-height: 1.4;
+	line-height: 1.25;
 }
 
 .entry-title a:link,
@@ -1171,10 +1171,16 @@ textarea {
 }
 
 .entry-meta {
-	margin: 0.35rem 0 0;
-	color: rgba(0, 0, 0, 0.5);
+	margin: 1rem 0 0;
+	color: rgba(0, 0, 0, 0.4);
 	font-size: 14px;
 	font-size: 0.875rem;
+	font-weight: bold;
+}
+
+.entry-meta a:link,
+.entry-meta a:visited {
+	text-decoration: none;
 }
 
 .entry-meta .updated:not(.published) {
@@ -1263,15 +1269,13 @@ body.tags-hidden.single-post .type-post .entry-tags {
 
 /* Search & Archive Header */
 .archive-header.entry-header {
-	padding-bottom: 1em;
 	margin-bottom: 2em;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .archive-header .archive-title,
 .search-header .search-title {
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 20px;
+	font-size: 1.25rem;
 	font-family: "Barlow", arial, helvetica, sans-serif;
 	font-family: var(--navi-font);
 	font-weight: bold;
@@ -1818,6 +1822,13 @@ object {
 /*--------------------------------------------------------------
 ## - Media Queries for Typography
 --------------------------------------------------------------*/
+@media only screen and (min-width: 320px) {
+	.entry-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+}
+
 @media only screen and (min-width: 640px) {
 	.site-title {
 		font-size: 28px;
@@ -1827,41 +1838,6 @@ object {
 	.site-description {
 		font-size: 14px;
 		font-size: 0.875rem;
-	}
-
-	.entry-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
-
-	.entry-content {
-		font-size: 17px;
-		font-size: 1.0625rem;
-	}
-
-	.entry-meta,
-	.more-link,
-	.pagination {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-
-	.archive-header .archive-title,
-	.search-header .search-title {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-}
-
-@media only screen and (min-width: 960px) {
-	.site-title {
-		font-size: 32px;
-		font-size: 2rem;
-	}
-
-	.site-description {
-		font-size: 15px;
-		font-size: 0.9375rem;
 	}
 
 	.entry-title {
@@ -1879,6 +1855,41 @@ object {
 	.pagination {
 		font-size: 16px;
 		font-size: 1rem;
+	}
+
+	.archive-header .archive-title,
+	.search-header .search-title {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.site-title {
+		font-size: 32px;
+		font-size: 2rem;
+	}
+
+	.site-description {
+		font-size: 15px;
+		font-size: 0.9375rem;
+	}
+
+	.entry-title {
+		font-size: 48px;
+		font-size: 3rem;
+	}
+
+	.entry-content {
+		font-size: 19px;
+		font-size: 1.1875rem;
+	}
+
+	.entry-meta,
+	.more-link,
+	.pagination {
+		font-size: 17px;
+		font-size: 1.0625rem;
 	}
 
 	.footer-widgets .widget-title {
@@ -1899,26 +1910,26 @@ object {
 	}
 
 	.entry-title {
-		font-size: 48px;
-		font-size: 3rem;
+		font-size: 56px;
+		font-size: 3.5rem;
 	}
 
 	.entry-content {
-		font-size: 19px;
-		font-size: 1.1875rem;
+		font-size: 20px;
+		font-size: 1.25rem;
 	}
 
 	.entry-meta,
 	.more-link,
 	.pagination {
-		font-size: 17px;
-		font-size: 1.0625rem;
+		font-size: 18px;
+		font-size: 1.125rem;
 	}
 
 	.archive-header .archive-title,
 	.search-header .search-title {
-		font-size: 20px;
-		font-size: 1.25rem;
+		font-size: 28px;
+		font-size: 1.75rem;
 	}
 }
 

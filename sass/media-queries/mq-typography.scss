@@ -1,3 +1,9 @@
+@media only screen and (min-width: 320px) {
+	.entry-title {
+		@include font-size(32);
+	}
+}
+
 @media only screen and (min-width: 640px) {
 	.site-title {
 		@include font-size(28);
@@ -5,35 +11,6 @@
 
 	.site-description {
 		@include font-size(14);
-	}
-
-	.entry-title {
-		@include font-size(32);
-	}
-
-	.entry-content {
-		@include font-size(17);
-	}
-
-	.entry-meta,
-	.more-link,
-	.pagination {
-		@include font-size(15);
-	}
-
-	.archive-header .archive-title,
-	.search-header .search-title {
-		@include font-size(18);
-	}
-}
-
-@media only screen and (min-width: 960px) {
-	.site-title {
-		@include font-size(32);
-	}
-
-	.site-description {
-		@include font-size(15);
 	}
 
 	.entry-title {
@@ -48,6 +25,35 @@
 	.more-link,
 	.pagination {
 		@include font-size(16);
+	}
+
+	.archive-header .archive-title,
+	.search-header .search-title {
+		@include font-size(24);
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.site-title {
+		@include font-size(32);
+	}
+
+	.site-description {
+		@include font-size(15);
+	}
+
+	.entry-title {
+		@include font-size(48);
+	}
+
+	.entry-content {
+		@include font-size(19);
+	}
+
+	.entry-meta,
+	.more-link,
+	.pagination {
+		@include font-size(17);
 	}
 
 	.footer-widgets .widget-title {
@@ -65,21 +71,21 @@
 	}
 
 	.entry-title {
-		@include font-size(48);
+		@include font-size(56);
 	}
 
 	.entry-content {
-		@include font-size(19);
+		@include font-size(20);
 	}
 
 	.entry-meta,
 	.more-link,
 	.pagination {
-		@include font-size(17);
+		@include font-size(18);
 	}
 
 	.archive-header .archive-title,
 	.search-header .search-title {
-		@include font-size(20);
+		@include font-size(28);
 	}
 }
