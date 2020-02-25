@@ -6,10 +6,10 @@
  */
 
 /**
- * GT Drive only works in WordPress 5.2 or later.
+ * GT Drive only works in WordPress 5.3 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '5.2', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
+if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
+	require get_template_directory() . '/inc/admin/back-compat.php';
 	return;
 }
 
