@@ -2359,3 +2359,9 @@ body.page-template-template-full-width-no-title .site-content .site-main {
 		max-width: 1520px;
 	}
 }
+
+/* No Title Page Template */
+body.page-template-template-no-title .site-content,
+body.page-template-template-full-width-no-title .site-content {
+	padding-top: 0;
+}
