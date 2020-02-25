@@ -16,6 +16,16 @@ function gt_drive_body_classes( $classes ) {
 	// Get theme options from database.
 	$theme_options = gt_drive_theme_options();
 
+	// Hide Site Title?
+	if ( false === $theme_options['site_title'] ) {
+		$classes[] = 'site-title-hidden';
+	}
+
+	// Hide Site Description?
+	if ( false === $theme_options['site_description'] ) {
+		$classes[] = 'site-description-hidden';
+	}
+
 	// Hide Date?
 	if ( false === $theme_options['meta_date'] ) {
 		$classes[] = 'date-hidden';
@@ -58,42 +68,3 @@ add_filter( 'body_class', 'gt_drive_body_classes' );
 function gt_drive_is_blog_page() {
 	return ( 'post' === get_post_type() ) && ( is_home() || is_archive() || is_single() );
 }
-
-/**
- * Hide Elements with CSS.
- *
- * @return void
- */
-function gt_drive_hide_elements() {
-
-	// Get theme options from database.
-	$theme_options = gt_drive_theme_options();
-
-	$elements = array();
-
-	// Hide Site Title?
-	if ( false === $theme_options['site_title'] ) {
-		$elements[] = '.site-title';
-	}
-
-	// Hide Site Description?
-	if ( false === $theme_options['site_description'] ) {
-		$elements[] = '.site-description';
-	}
-
-	// Allow plugins to add own elements.
-	$elements = apply_filters( 'gt_drive_hide_elements', $elements );
-
-	// Return early if no elements are hidden.
-	if ( empty( $elements ) ) {
-		return;
-	}
-
-	// Create CSS.
-	$classes    = implode( ', ', $elements );
-	$custom_css = $classes . ' { position: absolute; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; overflow: hidden; }';
-
-	// Add Custom CSS.
-	wp_add_inline_style( 'gt-drive-stylesheet', $custom_css );
-}
-add_filter( 'wp_enqueue_scripts', 'gt_drive_hide_elements', 11 );
