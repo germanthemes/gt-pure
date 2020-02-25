@@ -128,3 +128,35 @@ function gt_drive_block_editor_settings( $editor_settings ) {
 	return $editor_settings;
 }
 add_filter( 'block_editor_settings', 'gt_drive_block_editor_settings', 11 );
+
+
+/**
+ * Add body classes in Gutenberg Editor.
+ */
+function gt_drive_gutenberg_add_admin_body_class( $classes ) {
+	global $post;
+	$current_screen = get_current_screen();
+
+	// Return early if we are not in the Gutenberg Editor.
+	if ( ! ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) ) {
+		return $classes;
+	}
+
+	// Fullwidth Page Template?
+	if ( 'templates/template-full-width.php' === get_page_template_slug( $post->ID ) ) {
+		$classes .= ' gt-fullwidth-page-layout ';
+	}
+
+	// No Title Page Template?
+	if ( 'templates/template-no-title.php' === get_page_template_slug( $post->ID ) ) {
+		$classes .= ' gt-page-title-hidden ';
+	}
+
+	// Full-width / No Title Page Template?
+	if ( 'templates/template-full-width-no-title.php' === get_page_template_slug( $post->ID ) ) {
+		$classes .= ' gt-fullwidth-page-layout gt-page-title-hidden ';
+	}
+
+	return $classes;
+}
+add_filter( 'admin_body_class', 'gt_drive_gutenberg_add_admin_body_class' );
