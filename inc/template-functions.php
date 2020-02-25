@@ -16,21 +16,6 @@ function gt_drive_body_classes( $classes ) {
 	// Get theme options from database.
 	$theme_options = gt_drive_theme_options();
 
-	// Fullwidth Page Layout?
-	if ( is_page() && 'fullwidth' === get_post_meta( get_the_ID(), 'gt_page_layout', true ) ) {
-		$classes[] = 'fullwidth-page-layout';
-	}
-
-	// Hide Page Title?
-	if ( is_page() && get_post_meta( get_the_ID(), 'gt_hide_page_title', true ) ) {
-		$classes[] = 'page-title-hidden';
-	}
-
-	// Remove bottom margin of page?
-	if ( is_page() && get_post_meta( get_the_ID(), 'gt_remove_bottom_margin', true ) ) {
-		$classes[] = 'page-bottom-margin-removed';
-	}
-
 	// Hide Date?
 	if ( false === $theme_options['meta_date'] ) {
 		$classes[] = 'date-hidden';

@@ -110,80 +110,8 @@ function gt_drive_block_editor_assets() {
 
 	// Enqueue Editor Styling.
 	wp_enqueue_style( 'gt-drive-editor-styles', get_theme_file_uri( '/assets/css/editor-styles.css' ), array(), $theme_version, 'all' );
-
-	// Enqueue Theme Settings Sidebar plugin.
-	wp_enqueue_script( 'gt-drive-editor-theme-settings', get_theme_file_uri( '/assets/js/editor-theme-settings.js' ), array( 'wp-blocks', 'wp-element', 'wp-edit-post' ), $theme_version );
-
-	$theme_settings_l10n = array(
-		'plugin_title'         => esc_html__( 'Theme Settings', 'gt-drive' ),
-		'page_options'         => esc_html__( 'Page Options', 'gt-drive' ),
-		'page_layout'          => esc_html__( 'Page Layout', 'gt-drive' ),
-		'default_layout'       => esc_html__( 'Default', 'gt-drive' ),
-		'full_layout'          => esc_html__( 'Full-width', 'gt-drive' ),
-		'hide_title'           => esc_html__( 'Hide title?', 'gt-drive' ),
-		'remove_bottom_margin' => esc_html__( 'Remove bottom margin?', 'gt-drive' ),
-	);
-	wp_localize_script( 'gt-drive-editor-theme-settings', 'gtThemeSettingsL10n', $theme_settings_l10n );
 }
 add_action( 'enqueue_block_editor_assets', 'gt_drive_block_editor_assets' );
-
-
-/**
- * Register Post Meta
- */
-function gt_drive_register_post_meta() {
-	register_post_meta( 'page', 'gt_page_layout', array(
-		'type'              => 'string',
-		'single'            => true,
-		'show_in_rest'      => true,
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
-
-	register_post_meta( 'page', 'gt_hide_page_title', array(
-		'type'         => 'boolean',
-		'single'       => true,
-		'show_in_rest' => true,
-	) );
-
-	register_post_meta( 'page', 'gt_remove_bottom_margin', array(
-		'type'         => 'boolean',
-		'single'       => true,
-		'show_in_rest' => true,
-	) );
-}
-add_action( 'init', 'gt_drive_register_post_meta' );
-
-
-/**
- * Add body classes in Gutenberg Editor.
- */
-function gt_drive_gutenberg_add_admin_body_class( $classes ) {
-	global $post;
-	$current_screen = get_current_screen();
-
-	// Return early if we are not in the Gutenberg Editor.
-	if ( ! ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) ) {
-		return $classes;
-	}
-
-	// Fullwidth Page Layout?
-	if ( get_post_type( $post->ID ) && 'fullwidth' === get_post_meta( $post->ID, 'gt_page_layout', true ) ) {
-		$classes .= ' gt-fullwidth-page-layout ';
-	}
-
-	// Page Title hidden?
-	if ( get_post_type( $post->ID ) && get_post_meta( $post->ID, 'gt_hide_page_title', true ) ) {
-		$classes .= ' gt-page-title-hidden ';
-	}
-
-	// Remove bottom margin of page?
-	if ( get_post_type( $post->ID ) && get_post_meta( $post->ID, 'gt_remove_bottom_margin', true ) ) {
-		$classes .= ' gt-page-bottom-margin-removed ';
-	}
-
-	return $classes;
-}
-add_filter( 'admin_body_class', 'gt_drive_gutenberg_add_admin_body_class' );
 
 
 /**
