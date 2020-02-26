@@ -1098,7 +1098,7 @@ body.site-description-hidden .site-description {
 	transition: fill 0.15s ease;
 }
 
-.header-search-dropdown {
+.header-search-enabled .site-header .header-search-dropdown {
 	position: absolute;
 	display: none;
 	top: 0;
@@ -1112,19 +1112,19 @@ body.site-description-hidden .site-description {
 	z-index: 999;
 }
 
-.header-search-dropdown .header-search-form {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form {
 	display: flex;
 }
 
-.header-search-dropdown .header-search-form .search-form {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .search-form {
 	flex-grow: 1;
 }
 
-.header-search-dropdown .header-search-form .search-form .search-field {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .search-form .search-field {
 	background: #fff;
 }
 
-.header-search-dropdown .header-search-form .header-search-close {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .header-search-close {
 	margin: 0 0 0 1.5rem;
 	padding: 0.5rem;
 	color: #757575;
@@ -1133,18 +1133,18 @@ body.site-description-hidden .site-description {
 	border: none;
 }
 
-.header-search-dropdown .header-search-form .header-search-close:hover, .header-search-dropdown .header-search-form .header-search-close:active {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .header-search-close:hover, .header-search-enabled .site-header .header-search-dropdown .header-search-form .header-search-close:active {
 	cursor: pointer;
 	color: var(--header-text-hover-color);
 }
 
-.header-search-dropdown .header-search-form .header-search-close:focus {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .header-search-close:focus {
 	outline: thin dotted;
 	color: #757575;
 	color: var(--header-text-color);
 }
 
-.header-search-dropdown .header-search-form .header-search-close .icon-close {
+.header-search-enabled .site-header .header-search-dropdown .header-search-form .header-search-close .icon-close {
 	margin: 0;
 	padding: 0;
 	width: 28px;
@@ -1154,46 +1154,37 @@ body.site-description-hidden .site-description {
 	transition: fill 0.15s ease;
 }
 
-@media only screen and (min-width: 640px) {
-	.header-search-dropdown {
-		padding: 2rem;
-	}
-}
-
 @media only screen and (min-width: 960px) {
-	.header-search-and-main-navigation-active .header-main .primary-navigation {
+	.header-search-and-main-navigation-active .site-header .primary-navigation {
 		order: 2;
 	}
 
-	.header-search-and-main-navigation-active .header-main .header-search {
+	.header-search-and-main-navigation-active .site-header .header-search-button {
 		order: 3;
-		margin-left: 1rem;
-		margin-top: -3px;
+		margin-left: 0.5rem;
 	}
 
-	.header-search-and-main-navigation-active .header-main .header-search .header-search-icon .icon-search {
+	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon {
+		color: #757575;
+		color: var(--header-text-color);
+	}
+
+	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:hover, .header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:active {
+		color: var(--header-text-hover-color);
+	}
+
+	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:focus {
+		color: #757575;
+		color: var(--header-text-color);
+	}
+
+	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon .icon-search {
 		width: 22px;
 		height: 22px;
 	}
 
-	.vertical-header-layout .header-main .header-search {
-		order: 1;
-		margin: -1.5rem 0 1rem;
-	}
-
-	.vertical-header-layout .header-main .header-search .header-search-icon .icon-search {
-		width: 28px;
-		height: 28px;
-	}
-
-	.header-search-dropdown {
-		padding: 2.5rem;
-	}
-}
-
-@media only screen and (min-width: 1280px) {
-	.header-search-dropdown {
-		padding: 3rem;
+	.header-search-and-main-navigation-active .site-header .header-search-dropdown {
+		padding: 2rem;
 	}
 }
 
