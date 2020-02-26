@@ -15,7 +15,7 @@ function gt_drive_customize_register_theme_color_settings( $wp_customize ) {
 	// Add Section for Theme Colors.
 	$wp_customize->add_section( 'gt_drive_section_theme_colors', array(
 		'title'    => esc_html__( 'Theme Colors', 'gt-drive' ),
-		'priority' => 20,
+		'priority' => 40,
 		'panel'    => 'gt_drive_options_panel',
 	) );
 

@@ -18,7 +18,7 @@ function gt_drive_customize_register_license_settings( $wp_customize ) {
 	$wp_customize->add_section( 'gt_drive_section_license', array(
 		'title'       => esc_html__( 'License', 'gt-drive' ),
 		'description' => esc_html__( 'Please enter your license key. An active license key is necessary for automatic theme updates and support.', 'gt-drive' ),
-		'priority'    => 30,
+		'priority'    => 60,
 		'panel'       => 'gt_drive_options_panel',
 	) );
 

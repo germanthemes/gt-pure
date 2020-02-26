@@ -17,7 +17,7 @@ function gt_drive_customize_register_typography_settings( $wp_customize ) {
 	// Add Section for Theme Fonts.
 	$wp_customize->add_section( 'gt_drive_section_typography', array(
 		'title'    => esc_html__( 'Typography', 'gt-drive' ),
-		'priority' => 20,
+		'priority' => 50,
 		'panel'    => 'gt_drive_options_panel',
 	) );
 

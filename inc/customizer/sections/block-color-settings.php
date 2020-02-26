@@ -15,7 +15,7 @@ function gt_drive_customize_register_block_color_settings( $wp_customize ) {
 	// Add Section for Block Colors.
 	$wp_customize->add_section( 'gt_drive_section_block_colors', array(
 		'title'    => esc_html__( 'Block Colors', 'gt-drive' ),
-		'priority' => 10,
+		'priority' => 30,
 		'panel'    => 'gt_drive_options_panel',
 	) );
 

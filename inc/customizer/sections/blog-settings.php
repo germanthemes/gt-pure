@@ -6,7 +6,7 @@
  */
 
 /**
- * Adds Blog Color settings to the Customizer
+ * Add Blog settings to the Customizer
  *
  * @param object $wp_customize / Customizer Object.
  */
@@ -15,7 +15,7 @@ function gt_drive_customize_register_blog_settings( $wp_customize ) {
 	// Add Section for Blog Settings.
 	$wp_customize->add_section( 'gt_drive_section_blog', array(
 		'title'    => esc_html__( 'Blog Settings', 'gt-drive' ),
-		'priority' => 10,
+		'priority' => 20,
 		'panel'    => 'gt_drive_options_panel',
 	) );
 

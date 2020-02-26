@@ -51,6 +51,7 @@ function gt_drive_default_options() {
 	$default_options = array(
 		'site_title'         => true,
 		'site_description'   => true,
+		'header_search'      => false,
 		'meta_date'          => true,
 		'meta_author'        => true,
 		'meta_categories'    => true,
