@@ -1084,7 +1084,12 @@ body.site-description-hidden .site-description {
 
 @media only screen and (max-width: 960px) {
 	.header-social-icons {
+		display: none;
 		margin-left: -0.5rem;
+	}
+
+	.header-social-icons.toggled-on {
+		display: block;
 	}
 
 	.header-social-icons.social-icons-nav .social-icons-menu li a .icon {
@@ -1237,37 +1242,37 @@ body.site-description-hidden .site-description {
 }
 
 @media only screen and (min-width: 960px) {
-	.header-search-and-main-navigation-active .site-header .primary-navigation {
+	.header-search-enabled.primary-navigation-active .site-header .primary-navigation {
 		order: 2;
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-button {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-button {
 		order: 3;
 		margin-left: 1rem;
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-button .header-search-icon {
 		color: #757575;
 		color: var(--header-text-color);
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:hover, .header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:active {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-button .header-search-icon:hover, .header-search-enabled.primary-navigation-active .site-header .header-search-button .header-search-icon:active {
 		color: var(--header-text-hover-color);
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon:focus {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-button .header-search-icon:focus {
 		color: #757575;
 		color: var(--header-text-color);
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-button .header-search-icon .icon-search {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-button .header-search-icon .icon-search {
 		margin: 4px 0 0;
 		width: 20px;
 		height: 20px;
 		vertical-align: top;
 	}
 
-	.header-search-and-main-navigation-active .site-header .header-search-dropdown {
+	.header-search-enabled.primary-navigation-active .site-header .header-search-dropdown {
 		padding: 2rem;
 	}
 }

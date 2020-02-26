@@ -47,6 +47,7 @@
 	menuToggle     = masthead.find( '.menu-toggle' );
 	siteNavContain = masthead.find( '.main-navigation' );
 	siteNavigation = masthead.find( '.main-navigation > ul.menu' );
+	socialIcons    = masthead.find( '.header-social-icons' );
 
 	// Enable menuToggle.
 	(function() {
@@ -61,6 +62,7 @@
 
 		menuToggle.on( 'click.gt_drive', function() {
 			siteNavContain.toggleClass( 'toggled-on' );
+			socialIcons.toggleClass( 'toggled-on' );
 
 			$( this ).attr( 'aria-expanded', siteNavContain.hasClass( 'toggled-on' ) );
 		});

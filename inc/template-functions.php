@@ -31,9 +31,9 @@ function gt_drive_body_classes( $classes ) {
 		$classes[] = 'header-search-enabled';
 	}
 
-	// Add class if header search and main navigation menu is present.
-	if ( true === $theme_options['header_search'] && has_nav_menu( 'primary' ) ) {
-		$classes[] = 'header-search-and-main-navigation-active';
+	// Add class if main navigation menu or header social icons are present.
+	if ( has_nav_menu( 'primary' ) or has_nav_menu( 'social-header' ) ) {
+		$classes[] = 'primary-navigation-active';
 	}
 
 	// Hide header search in Customizer for instant live preview.

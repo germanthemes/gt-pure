@@ -35,7 +35,7 @@
 
 		<?php endif; ?>
 
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+		<?php if ( has_nav_menu( 'social-header' ) ) : ?>
 
 			<div class="header-social-icons social-icons-nav">
 

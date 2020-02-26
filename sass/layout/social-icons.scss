@@ -42,7 +42,12 @@
 
 @media only screen and (max-width: 960px) {
 	.header-social-icons {
+		display: none;
 		margin-left: -0.5rem;
+	}
+
+	.header-social-icons.toggled-on {
+		display: block;
 	}
 
 	.header-social-icons.social-icons-nav .social-icons-menu li a .icon {
