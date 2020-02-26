@@ -1,6 +1,9 @@
-.header-search-enabled .header-main {
+.header-search-enabled .site-header {
 	position: relative;
-	align-items: center;
+
+	.header-main {
+		align-items: center;
+	}
 
 	.primary-menu-toggle {
 		order: 3;
@@ -11,7 +14,7 @@
 		order: 4;
 	}
 
-	.header-search {
+	.header-search-button {
 		order: 2;
 		margin-left: auto;
 		@include font-size(17);
@@ -22,6 +25,61 @@
 		.header-search-icon {
 			margin: 0;
 			padding: 1rem;
+			@include color(--header-text-hover-color);
+			background: none;
+			border: none;
+
+			&:hover,
+			&:active {
+				cursor: pointer;
+				@include color(--header-text-color);
+			}
+
+			&:focus {
+				outline: thin dotted;
+				@include color(--header-text-hover-color);
+			}
+
+			.icon-search {
+				margin: 0;
+				padding: 0;
+				width: 26px;
+				height: 26px;
+				vertical-align: middle;
+				fill: currentColor;
+				transition: fill 0.15s ease;
+			}
+		}
+	}
+}
+
+.header-search-dropdown {
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 1.5rem;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 5px 10px #d5d5d5;
+	box-sizing: border-box;
+	z-index: 999;
+
+	.header-search-form {
+		display: flex;
+
+		.search-form {
+			flex-grow: 1;
+
+			.search-field {
+				background: #fff;
+			}
+		}
+
+		.header-search-close {
+			margin: 0 0 0 1.5rem;
+			padding: 0.5rem;
 			@include color(--header-text-color);
 			background: none;
 			border: none;
@@ -37,7 +95,7 @@
 				@include color(--header-text-color);
 			}
 
-			.icon-search {
+			.icon-close {
 				margin: 0;
 				padding: 0;
 				width: 28px;
@@ -49,56 +107,6 @@
 		}
 	}
 }
-
-/* Header Search Form */
-.header-search-dropdown {
-	display: none;
-	margin: 0;
-	padding: 1.5rem;
-	@include background(--header-background-color);
-
-	&.active {
-		display: flex;
-	}
-
-	.header-search-form {
-		width: 100%;
-
-		.search-form .search-field {
-			background: #fff;
-		}
-	}
-
-	.header-search-close {
-		margin: 0 1rem 0 0;
-		padding: 0.5rem;
-		@include color(--header-text-color);
-		background: none;
-		border: none;
-
-		&:hover,
-		&:active {
-			cursor: pointer;
-			@include color(--header-text-hover-color);
-		}
-
-		&:focus {
-			outline: thin dotted;
-			@include color(--header-text-color);
-		}
-
-		.icon-close {
-			margin: 0;
-			padding: 0;
-			width: 28px;
-			height: 28px;
-			vertical-align: middle;
-			fill: currentColor;
-			transition: fill 0.15s ease;
-		}
-	}
-}
-
 
 @media only screen and (min-width: 640px) {
 	.header-search-dropdown {

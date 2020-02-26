@@ -91,7 +91,7 @@ if ( ! function_exists( 'gt_drive_header_search_icon' ) ) :
 		if ( true === gt_drive_get_option( 'header_search' ) || is_customize_preview() ) :
 			?>
 
-			<div class="header-search">
+			<div class="header-search-button">
 
 				<button class="header-search-icon" aria-controls="header-search" aria-expanded="false">
 					<?php echo gt_drive_get_svg( 'search' ); ?>
@@ -119,13 +119,13 @@ if ( ! function_exists( 'gt_drive_header_search_form' ) ) :
 			?>
 
 			<div class="header-search-dropdown">
-				<button class="header-search-close">
-					<?php echo gt_drive_get_svg( 'close' ); ?>
-					<span class="screen-reader-text"><?php esc_html_e( 'Close', 'gt-drive' ); ?></span>
-				</button>
-
 				<div class="header-search-form">
 					<?php get_search_form(); ?>
+
+					<button class="header-search-close">
+						<?php echo gt_drive_get_svg( 'close' ); ?>
+						<span class="screen-reader-text"><?php esc_html_e( 'Close', 'gt-drive' ); ?></span>
+					</button>
 				</div>
 			</div>
 
