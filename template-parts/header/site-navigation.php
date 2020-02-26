@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php if ( has_nav_menu( 'primary' ) ) : ?>
+<?php if ( has_nav_menu( 'primary' ) or has_nav_menu( 'social-header' ) ) : ?>
 
 	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 		<?php
@@ -19,17 +19,29 @@
 
 	<div class="primary-navigation">
 
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-drive' ); ?>">
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'container'      => false,
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-drive' ); ?>">
+
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'container'      => false,
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+
+		<?php endif; ?>
+
+		<?php
+		if ( has_nav_menu( 'social-header' ) ) :
+
+			gt_drive_social_icons_menu( 'social-header' );
+
+		endif;
+		?>
 
 	</div><!-- .primary-navigation -->
 

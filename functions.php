@@ -43,7 +43,9 @@ function gt_drive_setup() {
 
 	// Register Navigation Menus.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Main Navigation', 'gt-drive' ),
+		'primary'       => esc_html__( 'Main Navigation', 'gt-drive' ),
+		'social-header' => esc_html__( 'Social Icons (Header)', 'gt-drive' ),
+		'social-footer' => esc_html__( 'Social Icons (Footer)', 'gt-drive' ),
 	) );
 
 	// Switch default core markup for galleries and captions to output valid HTML5.
@@ -112,7 +114,7 @@ function gt_drive_scripts() {
 	wp_enqueue_style( 'gt-drive-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 
 	// Register and enqueue navigation.js.
-	if ( has_nav_menu( 'primary' ) ) {
+	if ( has_nav_menu( 'primary' ) or has_nav_menu( 'social-header' ) ) {
 		wp_enqueue_script( 'gt-drive-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '1.0', true );
 		$gt_drive_l10n = array(
 			'expand'   => esc_html__( 'Expand child menu', 'gt-drive' ),

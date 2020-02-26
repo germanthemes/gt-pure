@@ -135,6 +135,27 @@ if ( ! function_exists( 'gt_drive_header_search_form' ) ) :
 endif;
 
 
+if ( ! function_exists( 'gt_drive_social_icons_menu' ) ) :
+	/**
+	 * Displays social icons menu
+	 *
+	 * @return void
+	 */
+	function gt_drive_social_icons_menu( $menu ) {
+		wp_nav_menu( array(
+			'theme_location' => $menu,
+			'container'      => false,
+			'menu_class'     => $menu . '-menu social-icons-menu',
+			'echo'           => true,
+			'fallback_cb'    => '',
+			'link_before'    => '<span class = "screen-reader-text">',
+			'link_after'     => '</span>',
+			'depth'          => 1,
+		) );
+	}
+endif;
+
+
 if ( ! function_exists( 'gt_drive_archive_header' ) ) :
 	/**
 	 * Displays the header title on archive pages.
