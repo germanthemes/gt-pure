@@ -26,6 +26,21 @@ function gt_drive_body_classes( $classes ) {
 		$classes[] = 'site-description-hidden';
 	}
 
+	// Add class if header search is enabled.
+	if ( true === $theme_options['header_search'] ) {
+		$classes[] = 'header-search-enabled';
+	}
+
+	// Add class if header search and main navigation menu is present.
+	if ( true === $theme_options['header_search'] && has_nav_menu( 'primary' ) ) {
+		$classes[] = 'header-search-and-main-navigation-active';
+	}
+
+	// Hide header search in Customizer for instant live preview.
+	if ( is_customize_preview() && false === $theme_options['header_search'] ) {
+		$classes[] = 'header-search-hidden';
+	}
+
 	// Hide Date?
 	if ( false === $theme_options['meta_date'] ) {
 		$classes[] = 'date-hidden';

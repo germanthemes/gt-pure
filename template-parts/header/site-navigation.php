@@ -34,3 +34,5 @@
 	</div><!-- .primary-navigation -->
 
 <?php endif; ?>
+
+<?php gt_drive_header_search_icon(); ?>

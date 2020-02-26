@@ -79,6 +79,62 @@ if ( ! function_exists( 'gt_drive_header_image' ) ) :
 endif;
 
 
+if ( ! function_exists( 'gt_drive_header_search_icon' ) ) :
+	/**
+	 * Add search icon to navigation menu
+	 *
+	 * @return void
+	 */
+	function gt_drive_header_search_icon() {
+
+		// Show header search icon if activated.
+		if ( true === gt_drive_get_option( 'header_search' ) || is_customize_preview() ) :
+			?>
+
+			<div class="header-search">
+
+				<button class="header-search-icon" aria-controls="header-search" aria-expanded="false">
+					<?php echo gt_drive_get_svg( 'search' ); ?>
+					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'gt-drive' ); ?></span>
+				</button>
+
+			</div>
+
+			<?php
+		endif;
+	}
+endif;
+
+
+if ( ! function_exists( 'gt_drive_header_search_form' ) ) :
+	/**
+	 * Displays search form in header area
+	 *
+	 * @return void
+	 */
+	function gt_drive_header_search_form() {
+
+		// Show header search form if activated.
+		if ( true === gt_drive_get_option( 'header_search' ) || is_customize_preview() ) :
+			?>
+
+			<div class="header-search-dropdown">
+				<button class="header-search-close">
+					<?php echo gt_drive_get_svg( 'close' ); ?>
+					<span class="screen-reader-text"><?php esc_html_e( 'Close', 'gt-drive' ); ?></span>
+				</button>
+
+				<div class="header-search-form">
+					<?php get_search_form(); ?>
+				</div>
+			</div>
+
+			<?php
+		endif;
+	}
+endif;
+
+
 if ( ! function_exists( 'gt_drive_archive_header' ) ) :
 	/**
 	 * Displays the header title on archive pages.

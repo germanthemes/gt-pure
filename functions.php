@@ -122,6 +122,13 @@ function gt_drive_scripts() {
 		wp_localize_script( 'gt-drive-navigation', 'gtDriveScreenReaderText', $gt_drive_l10n );
 	}
 
+	// Register and enqueue header-search.js if enabled
+	if ( true === gt_drive_get_option( 'header_search' ) || is_customize_preview() ) :
+
+		wp_enqueue_script( 'gt-drive-header-search', get_theme_file_uri( '/assets/js/header-search.js' ), array( 'jquery' ), '20200226', true );
+
+	endif;
+
 	// Enqueue svgxuse to support external SVG Sprites in Internet Explorer.
 	wp_enqueue_script( 'svgxuse', get_theme_file_uri( '/assets/js/svgxuse.min.js' ), array(), '1.2.4' );
 
