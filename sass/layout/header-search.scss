@@ -116,7 +116,7 @@
 
 		.header-search-button {
 			order: 3;
-			margin-left: 0.5rem;
+			margin-left: 1rem;
 
 			.header-search-icon {
 				@include color(--header-text-color);
@@ -131,8 +131,10 @@
 				}
 
 				.icon-search {
-					width: 22px;
-					height: 22px;
+					margin: 4px 0 0;
+					width: 20px;
+					height: 20px;
+					vertical-align: top;
 				}
 			}
 		}

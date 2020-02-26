@@ -35,13 +35,15 @@
 
 		<?php endif; ?>
 
-		<?php
-		if ( has_nav_menu( 'social-header' ) ) :
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-			gt_drive_social_icons_menu( 'social-header' );
+			<div class="header-social-icons social-icons-nav">
 
-		endif;
-		?>
+				<?php gt_drive_social_icons_menu( 'social-header' ); ?>
+
+			</div>
+
+		<?php endif; ?>
 
 	</div><!-- .primary-navigation -->
 
