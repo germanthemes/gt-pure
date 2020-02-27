@@ -1098,6 +1098,12 @@ body.site-description-hidden .site-description {
 	}
 }
 
+@media only screen and (min-width: 1200px) {
+	.header-social-icons {
+		margin-left: 2rem;
+	}
+}
+
 /* Footer Social Icons */
 .footer-social-menu-wrap .social-icons-menu {
 	margin-left: -0.5rem;
