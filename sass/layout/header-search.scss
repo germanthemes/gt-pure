@@ -25,19 +25,19 @@
 		.header-search-icon {
 			margin: 0;
 			padding: 1rem;
-			@include color(--header-text-hover-color);
+			@include color(--header-text-color);
 			background: none;
 			border: none;
 
 			&:hover,
 			&:active {
 				cursor: pointer;
-				@include color(--header-text-color);
+				@include color(--header-hover-color);
 			}
 
 			&:focus {
 				outline: thin dotted;
-				@include color(--header-text-hover-color);
+				@include color(--header-text-color);
 			}
 
 			.icon-search {
@@ -86,7 +86,7 @@
 				&:hover,
 				&:active {
 					cursor: pointer;
-					@include color(--header-text-hover-color);
+					@include color(--header-hover-color);
 				}
 
 				&:focus {
@@ -119,17 +119,6 @@
 			margin-left: 1rem;
 
 			.header-search-icon {
-				@include color(--header-text-color);
-
-				&:hover,
-				&:active {
-					@include color(--header-text-hover-color);
-				}
-
-				&:focus {
-					@include color(--header-text-color);
-				}
-
 				.icon-search {
 					margin: 4px 0 0;
 					width: 20px;

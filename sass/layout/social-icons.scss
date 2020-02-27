@@ -23,7 +23,7 @@
 
 .social-icons-nav .social-icons-menu li a:hover,
 .social-icons-nav .social-icons-menu li a:active {
-	@include color(--header-text-hover-color);
+	@include color(--header-hover-color);
 	text-decoration: none;
 }
 

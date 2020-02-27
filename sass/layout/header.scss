@@ -39,7 +39,7 @@
 .site-title {
 	margin: 0;
 	padding: 0;
-	@include color(--header-hover-color);
+	@include color(--header-text-color);
 	text-decoration: none;
 	@include font-size(24);
 	@include font-family(--title-font);
@@ -50,19 +50,19 @@
 
 .site-title a:link,
 .site-title a:visited {
-	@include color(--header-hover-color);
+	@include color(--header-text-color);
 }
 
 .site-title a:hover,
 .site-title a:active {
-	@include color(--header-text-color);
+	@include color(--header-hover-color);
 }
 
 .site-description {
 	display: none;
 	margin: 0;
 	padding: 0;
-	@include color(--header-text-color);
+	@include color(--header-hover-color);
 	@include font-size(13);
 	font-weight: bold;
 }
