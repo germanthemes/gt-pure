@@ -44,20 +44,24 @@ GNU General Public License for more details.
 
 == Ressources ==
 
-GT Drive bundles the following third-party resources:
+GT Drive uses and bundles the following third-party resources:
 
 1. Genericons Neue - https://github.com/Automattic/genericons-neue
 License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: 2017 Automattic, Inc., https://automattic.com/
 
-2. Underscores - http://underscores.me/
+2. Font Awesome (for our social icons subset) - https://github.com/FortAwesome/Font-Awesome
+License: Distributed under the terms of the CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+Copyright: Fonticons, Inc, https://fontawesome.com/
+
+3. Underscores - http://underscores.me/
 License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)
 Copyright: 2012-2015 Automattic, Inc., https://automattic.com/
 
-3. normalize.css - http://necolas.github.io/normalize.css/
+4. normalize.css - http://necolas.github.io/normalize.css/
 License: Distributed under the terms of the MIT License (http://opensource.org/licenses/MIT)
 Copyright: 2012-2015 Nicolas Gallagher and Jonathan Neal
 
-4. svgxuse - https://github.com/Keyamoon/svgxuse
+5. svgxuse - https://github.com/Keyamoon/svgxuse
 License: Licensed under MIT license (https://github.com/Keyamoon/svgxuse/blob/master/license)
 Copyright: 2017 IcoMoon.io
