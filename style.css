@@ -33,10 +33,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # - Layout Structure
 # - Header
 # - Navigation
+# - Social Icons Menu
+# - Header Search Feature
+# - Sidebar
 # - Posts and pages
-# - Footer
 # - Media
 # - Blocks
+# - Footer
+# - Scroll-to-Top Button
 # - Media Queries
 --------------------------------------------------------------*/
 
@@ -1568,158 +1572,6 @@ body.tags-hidden.single-post .type-post .entry-tags {
 }
 
 /*--------------------------------------------------------------
-# - Footer
---------------------------------------------------------------*/
-.site-footer {
-	padding-top: 1.5rem;
-	padding-bottom: 1px;
-	font-size: 17px;
-	font-size: 1.0625rem;
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--footer-text-color);
-	background-color: #202020;
-	background-color: var(--footer-background-color);
-}
-
-.site-footer a:link,
-.site-footer a:visited {
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--footer-link-color);
-}
-
-.site-footer a:hover,
-.site-footer a:active {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--footer-link-hover-color);
-}
-
-.site-footer input[type="text"],
-.site-footer input[type="email"],
-.site-footer input[type="url"],
-.site-footer input[type="password"],
-.site-footer input[type="search"],
-.site-footer input[type="submit"],
-.site-footer textarea {
-	border: 2px solid rgba(255, 255, 255, 0.1);
-	border: 2px solid var(--footer-border-color);
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--footer-link-hover-color);
-}
-
-.site-footer input[type="text"]:focus,
-.site-footer input[type="email"]:focus,
-.site-footer input[type="url"]:focus,
-.site-footer input[type="password"]:focus,
-.site-footer input[type="search"]:focus,
-.site-footer textarea:focus {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--footer-text-color);
-}
-
-.site-footer button,
-.site-footer input[type="button"],
-.site-footer input[type="reset"],
-.site-footer input[type="submit"] {
-	color: rgba(255, 255, 255, 0.5);
-	color: var(--footer-link-hover-color);
-}
-
-.site-footer button:hover,
-.site-footer input[type="button"]:hover,
-.site-footer input[type="reset"]:hover,
-.site-footer input[type="submit"]:hover,
-.site-footer button:focus,
-.site-footer input[type="button"]:focus,
-.site-footer input[type="reset"]:focus,
-.site-footer input[type="submit"]:focus,
-.site-footer button:active,
-.site-footer input[type="button"]:active,
-.site-footer input[type="reset"]:active,
-.site-footer input[type="submit"]:active {
-	color: rgba(255, 255, 255, 0.1);
-	color: var(--footer-border-color);
-}
-
-/* Footer Widgets */
-.footer-widgets .widget {
-	margin-bottom: 1.5rem;
-}
-
-.footer-widgets .widget-title {
-	margin-top: 0;
-	margin-bottom: 1.5rem;
-	color: rgba(255, 255, 255, 0.95);
-	color: var(--footer-link-color);
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-family: "Barlow", arial, helvetica, sans-serif;
-	font-family: var(--navi-font);
-	font-weight: bold;
-	font-weight: var(--navi-font-weight);
-	text-transform: none;
-	text-transform: var(--navi-text-transform);
-}
-
-.footer-widgets .widget ul li a {
-	text-decoration: none;
-}
-
-/* Footer Navigation */
-.footer-menus {
-	padding-top: 1.25rem;
-	border-top: 2px solid rgba(255, 255, 255, 0.1);
-	border-top: 2px solid var(--footer-border-color);
-}
-
-.footer-navigation-menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.footer-navigation-menu li {
-	margin: 0;
-}
-
-.footer-navigation-menu a {
-	display: block;
-	margin: 0;
-	padding: 0.5rem 0;
-	text-decoration: none;
-}
-
-.footer-navigation-menu li.current-menu-item > a {
-	text-decoration: underline;
-}
-
-@media only screen and (min-width: 640px) {
-	.footer-navigation-menu {
-		display: flex;
-		flex-flow: row wrap;
-	}
-
-	.footer-navigation-menu a {
-		padding-right: 1.5rem;
-	}
-}
-
-/* Footer Copyright */
-.footer-copyright {
-	margin-bottom: 1.25rem;
-	padding-top: 1.25rem;
-	border-top: 2px solid rgba(255, 255, 255, 0.1);
-	border-top: 2px solid var(--footer-border-color);
-}
-
-.footer-copyright .widget {
-	margin: 0;
-}
-
-.footer-copyright .widget-title {
-	margin-top: 0;
-}
-
-/*--------------------------------------------------------------
 # - Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
@@ -2100,6 +1952,200 @@ object {
 
 .has-huge-font-size {
 	font-size: 64px;
+}
+
+/*--------------------------------------------------------------
+# - Footer
+--------------------------------------------------------------*/
+.site-footer {
+	padding-top: 1.5rem;
+	padding-bottom: 1px;
+	font-size: 17px;
+	font-size: 1.0625rem;
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--footer-text-color);
+	background-color: #202020;
+	background-color: var(--footer-background-color);
+}
+
+.site-footer a:link,
+.site-footer a:visited {
+	color: rgba(255, 255, 255, 0.95);
+	color: var(--footer-link-color);
+}
+
+.site-footer a:hover,
+.site-footer a:active {
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--footer-link-hover-color);
+}
+
+.site-footer input[type="text"],
+.site-footer input[type="email"],
+.site-footer input[type="url"],
+.site-footer input[type="password"],
+.site-footer input[type="search"],
+.site-footer input[type="submit"],
+.site-footer textarea {
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	border: 2px solid var(--footer-border-color);
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--footer-link-hover-color);
+}
+
+.site-footer input[type="text"]:focus,
+.site-footer input[type="email"]:focus,
+.site-footer input[type="url"]:focus,
+.site-footer input[type="password"]:focus,
+.site-footer input[type="search"]:focus,
+.site-footer textarea:focus {
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--footer-text-color);
+}
+
+.site-footer button,
+.site-footer input[type="button"],
+.site-footer input[type="reset"],
+.site-footer input[type="submit"] {
+	color: rgba(255, 255, 255, 0.5);
+	color: var(--footer-link-hover-color);
+}
+
+.site-footer button:hover,
+.site-footer input[type="button"]:hover,
+.site-footer input[type="reset"]:hover,
+.site-footer input[type="submit"]:hover,
+.site-footer button:focus,
+.site-footer input[type="button"]:focus,
+.site-footer input[type="reset"]:focus,
+.site-footer input[type="submit"]:focus,
+.site-footer button:active,
+.site-footer input[type="button"]:active,
+.site-footer input[type="reset"]:active,
+.site-footer input[type="submit"]:active {
+	color: rgba(255, 255, 255, 0.1);
+	color: var(--footer-border-color);
+}
+
+/* Footer Widgets */
+.footer-widgets .widget {
+	margin-bottom: 1.5rem;
+}
+
+.footer-widgets .widget-title {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	color: rgba(255, 255, 255, 0.95);
+	color: var(--footer-link-color);
+	font-size: 20px;
+	font-size: 1.25rem;
+	font-family: "Barlow", arial, helvetica, sans-serif;
+	font-family: var(--navi-font);
+	font-weight: bold;
+	font-weight: var(--navi-font-weight);
+	text-transform: none;
+	text-transform: var(--navi-text-transform);
+}
+
+.footer-widgets .widget ul li a {
+	text-decoration: none;
+}
+
+/* Footer Navigation */
+.footer-menus {
+	padding-top: 1.25rem;
+	border-top: 2px solid rgba(255, 255, 255, 0.1);
+	border-top: 2px solid var(--footer-border-color);
+}
+
+.footer-navigation-menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.footer-navigation-menu li {
+	margin: 0;
+}
+
+.footer-navigation-menu a {
+	display: block;
+	margin: 0;
+	padding: 0.5rem 0;
+	text-decoration: none;
+}
+
+.footer-navigation-menu li.current-menu-item > a {
+	text-decoration: underline;
+}
+
+@media only screen and (min-width: 640px) {
+	.footer-navigation-menu {
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.footer-navigation-menu a {
+		padding-right: 1.5rem;
+	}
+}
+
+/* Footer Copyright */
+.footer-copyright {
+	margin-bottom: 1.25rem;
+	padding-top: 1.25rem;
+	border-top: 2px solid rgba(255, 255, 255, 0.1);
+	border-top: 2px solid var(--footer-border-color);
+}
+
+.footer-copyright .widget {
+	margin: 0;
+}
+
+.footer-copyright .widget-title {
+	margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# - Scroll-to-Top Button
+--------------------------------------------------------------*/
+.scroll-to-top-button {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	z-index: 9999;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	-webkit-transition: none;
+	transition: none;
+}
+
+.scroll-to-top-button:focus {
+	background-color: #e36355;
+	background-color: var(--button-color);
+}
+
+.scroll-to-top-button:focus:hover {
+	background-color: #202020;
+	background-color: var(--button-hover-color);
+}
+
+.scroll-to-top-button .icon {
+	margin: 0.2rem 0 0;
+	width: 22px;
+	height: 22px;
+	vertical-align: top;
+	fill: #fff;
+	fill: var(--button-text-color);
+}
+
+.scroll-to-top-button:hover .icon,
+.scroll-to-top-button:active .icon {
+	fill: var(--button-hover-text-color);
 }
 
 /*--------------------------------------------------------------

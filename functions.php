@@ -132,6 +132,14 @@ function gt_drive_scripts() {
 
 	endif;
 
+	// Register and enqueue scroll-to-top.js if enabled
+	if ( true === gt_drive_get_option( 'scroll_to_top' ) ) :
+
+		wp_enqueue_script( 'gt-drive-scroll-to-top', get_theme_file_uri( '/assets/js/scroll-to-top.min.js' ), array( 'jquery' ), '20200228', true );
+		wp_localize_script( 'gt-drive-scroll-to-top', 'gtDriveScrollButton', gt_drive_get_svg( 'collapse' ) );
+
+	endif;
+
 	// Enqueue svgxuse to support external SVG Sprites in Internet Explorer.
 	wp_enqueue_script( 'svgxuse', get_theme_file_uri( '/assets/js/svgxuse.min.js' ), array(), '1.2.4' );
 

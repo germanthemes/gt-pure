@@ -33,10 +33,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # - Layout Structure
 # - Header
 # - Navigation
+# - Social Icons Menu
+# - Header Search Feature
+# - Sidebar
 # - Posts and pages
-# - Footer
 # - Media
 # - Blocks
+# - Footer
+# - Scroll-to-Top Button
 # - Media Queries
 --------------------------------------------------------------*/
 
@@ -118,11 +122,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "content/comments";
 
 /*--------------------------------------------------------------
-# - Footer
---------------------------------------------------------------*/
-@import "layout/footer";
-
-/*--------------------------------------------------------------
 # - Media
 --------------------------------------------------------------*/
 @import "content/media";
@@ -134,6 +133,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "blocks/gt-blocks";
 @import "blocks/colors";
 @import "blocks/font-sizes";
+
+/*--------------------------------------------------------------
+# - Footer
+--------------------------------------------------------------*/
+@import "layout/footer";
+
+/*--------------------------------------------------------------
+# - Scroll-to-Top Button
+--------------------------------------------------------------*/
+@import "features/scroll-to-top";
 
 /*--------------------------------------------------------------
 # - Media Queries

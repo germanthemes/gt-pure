@@ -52,6 +52,7 @@ function gt_drive_default_options() {
 		'site_title'         => true,
 		'site_description'   => true,
 		'header_search'      => false,
+		'scroll_to_top'      => false,
 		'meta_date'          => true,
 		'meta_author'        => true,
 		'meta_categories'    => true,

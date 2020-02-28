@@ -41,11 +41,37 @@ function gt_drive_customize_register_layout_settings( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'gt_drive_theme_options[header_search]', array(
-		'label'    => esc_html__( 'Enable search icon in header', 'gt-drive' ),
+		'label'    => esc_html__( 'Enable search function in header', 'gt-drive' ),
 		'section'  => 'gt_drive_section_layout',
 		'settings' => 'gt_drive_theme_options[header_search]',
 		'type'     => 'checkbox',
 		'priority' => 20,
+	) );
+
+	// Add Scroll to Top Headline.
+	$wp_customize->add_control( new GT_Drive_Customize_Header_Control(
+		$wp_customize, 'gt_drive_theme_options[scroll_top_title]', array(
+			'label'    => esc_html__( 'Scroll-to-Top Button', 'gt-drive' ),
+			'section'  => 'gt_drive_section_layout',
+			'settings' => array(),
+			'priority' => 30,
+		)
+	) );
+
+	// Add Setting and Control for scroll to top checkbox.
+	$wp_customize->add_setting( 'gt_drive_theme_options[scroll_to_top]', array(
+		'default'           => $default['scroll_to_top'],
+		'type'              => 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'gt_drive_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gt_drive_theme_options[scroll_to_top]', array(
+		'label'    => esc_html__( 'Enable Scroll-to-Top Button', 'gt-drive' ),
+		'section'  => 'gt_drive_section_layout',
+		'settings' => 'gt_drive_theme_options[scroll_to_top]',
+		'type'     => 'checkbox',
+		'priority' => 40,
 	) );
 }
 add_action( 'customize_register', 'gt_drive_customize_register_layout_settings' );
