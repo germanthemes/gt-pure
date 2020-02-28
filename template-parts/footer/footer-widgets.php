@@ -20,37 +20,13 @@ if ( is_active_sidebar( 'footer-column-1' )
 
 			<div class="footer-widgets-columns">
 
-				<?php if ( is_active_sidebar( 'footer-column-1' ) ) : ?>
+				<?php gt_drive_widget_area( 'footer-column-1', 'footer-widget-column' ); ?>
 
-					<div class="footer-widget-column widget-area">
-						<?php dynamic_sidebar( 'footer-column-1' ); ?>
-					</div>
+				<?php gt_drive_widget_area( 'footer-column-2', 'footer-widget-column' ); ?>
 
-				<?php endif; ?>
+				<?php gt_drive_widget_area( 'footer-column-3', 'footer-widget-column' ); ?>
 
-				<?php if ( is_active_sidebar( 'footer-column-2' ) ) : ?>
-
-					<div class="footer-widget-column widget-area">
-						<?php dynamic_sidebar( 'footer-column-2' ); ?>
-					</div>
-
-				<?php endif; ?>
-
-				<?php if ( is_active_sidebar( 'footer-column-3' ) ) : ?>
-
-					<div class="footer-widget-column widget-area">
-						<?php dynamic_sidebar( 'footer-column-3' ); ?>
-					</div>
-
-				<?php endif; ?>
-
-				<?php if ( is_active_sidebar( 'footer-column-4' ) ) : ?>
-
-					<div class="footer-widget-column widget-area">
-						<?php dynamic_sidebar( 'footer-column-4' ); ?>
-					</div>
-
-				<?php endif; ?>
+				<?php gt_drive_widget_area( 'footer-column-4', 'footer-widget-column' ); ?>
 
 			</div>
 

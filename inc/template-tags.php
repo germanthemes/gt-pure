@@ -350,3 +350,21 @@ if ( ! function_exists( 'gt_drive_pagination' ) ) :
 		) );
 	}
 endif;
+
+
+if ( ! function_exists( 'gt_drive_widget_area' ) ) :
+	/**
+	 * Display Widget Area
+	 */
+	function gt_drive_widget_area( $area, $class = '' ) {
+		if ( is_active_sidebar( $area ) ) :
+			?>
+
+			<div class="<?php echo esc_attr( $area . '-widgets ' . $class . ' widget-area' ); ?>">
+				<?php dynamic_sidebar( $area ); ?>
+			</div>
+
+			<?php
+		endif;
+	}
+endif;
