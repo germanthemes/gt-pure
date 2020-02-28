@@ -64,23 +64,21 @@
 }
 
 /* Footer Social Icons */
-.footer-social-menu-wrap .social-icons-menu {
+.footer-social-icons .social-icons-menu {
 	margin-left: -0.5rem;
 }
 
-.footer-social-menu-wrap .social-icons-menu li a {
+.footer-social-icons .social-icons-menu li a {
 	@include color(--footer-link-color);
-}
 
-.footer-social-menu-wrap .social-icons-menu li a:hover,
-.footer-social-menu-wrap .social-icons-menu li a:active {
-	@include color(--footer-link-hover-color);
-}
-
-@media only screen and (min-width: 960px) {
-	.footer-social-menu-wrap .social-icons-menu {
+	.icon {
 		margin: 0;
-		margin-right: -0.5rem;
-		justify-content: flex-end;
+		width: 24px;
+		height: 24px;
 	}
+}
+
+.footer-social-icons .social-icons-menu li a:hover,
+.footer-social-icons .social-icons-menu li a:active {
+	@include color(--footer-link-hover-color);
 }

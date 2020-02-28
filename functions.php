@@ -44,6 +44,7 @@ function gt_drive_setup() {
 	// Register Navigation Menus.
 	register_nav_menus( array(
 		'primary'       => esc_html__( 'Main Navigation', 'gt-drive' ),
+		'footer'        => esc_html__( 'Footer Navigation', 'gt-drive' ),
 		'social-header' => esc_html__( 'Social Icons (Header)', 'gt-drive' ),
 		'social-footer' => esc_html__( 'Social Icons (Footer)', 'gt-drive' ),
 	) );
