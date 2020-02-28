@@ -1,6 +1,6 @@
 .site-header {
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .header-main {
@@ -29,27 +29,15 @@
 
 .site-logo {
 	margin-bottom: 1rem;
-
-	img.custom-logo {
-		margin: 0;
-		padding: 0;
-		max-width: 100%;
-		height: auto;
-		border: none;
-		vertical-align: top;
-	}
 }
 
-@media only screen and (min-width: 480px) {
-	.site-branding {
-		flex-direction: row;
-		justify-content: start;
-		align-items: center;
-	}
-
-	.site-logo {
-		margin: 0 1.5rem 0 0;
-	}
+img.custom-logo {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	height: auto;
+	border: none;
+	vertical-align: top;
 }
 
 .site-title {
@@ -105,4 +93,17 @@ body.site-description-hidden .site-description {
 	width: 100%;
 	height: auto;
 	vertical-align: top;
+}
+
+/* Display logo and site title horizontally on larger screens */
+@media only screen and (min-width: 480px) {
+	.site-branding {
+		flex-direction: row;
+		justify-content: start;
+		align-items: center;
+	}
+
+	.site-logo {
+		margin: 0 1.5rem 0 0;
+	}
 }
