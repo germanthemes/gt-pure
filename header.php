@@ -2,7 +2,7 @@
 /**
  * The header for our theme.
  *
- * Displays all of the <head> section and everything up till <div id="content">
+ * Displays all of the <head> section and everything up till <main>
  *
  * @version 1.0
  * @package GT Drive
@@ -26,6 +26,7 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gt-drive' ); ?></a>
 
 		<?php do_action( 'gt_drive_before_header' ); ?>
+		<?php gt_drive_widget_area( 'before-header' ); ?>
 
 		<header id="masthead" class="site-header" role="banner">
 
@@ -41,6 +42,7 @@
 
 		</header><!-- #masthead -->
 
+		<?php gt_drive_widget_area( 'after-header' ); ?>
 		<?php do_action( 'gt_drive_after_header' ); ?>
 
 		<?php gt_drive_header_image(); ?>
@@ -48,3 +50,6 @@
 		<div id="content" class="site-content">
 
 			<main id="main" class="site-main" role="main">
+
+				<?php do_action( 'gt_drive_before_content' ); ?>
+				<?php gt_drive_widget_area( 'before-content' ); ?>

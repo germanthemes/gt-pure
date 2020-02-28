@@ -168,6 +168,39 @@ add_action( 'enqueue_block_editor_assets', 'gt_drive_theme_fonts', 1 );
  */
 function gt_drive_widgets_init() {
 
+	// Register Before Header widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'Before Header', 'gt-drive' ),
+		'id'            => 'before-header',
+		'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Register After Header widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Header', 'gt-drive' ),
+		'id'            => 'after-header',
+		'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Register Before Blog widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'Before Content', 'gt-drive' ),
+		'id'            => 'before-content',
+		'description'   => esc_html_x( 'Appears above the content area.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
 	// Register Blog Sidebar widget area.
 	register_sidebar( array(
 		'name'          => esc_html__( 'Blog Sidebar', 'gt-drive' ),
@@ -175,7 +208,40 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears on blog pages and single posts.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class = "widget-title">',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Register After Posts widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Single Posts', 'gt-drive' ),
+		'id'            => 'after-posts',
+		'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Register After Pages widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Pages', 'gt-drive' ),
+		'id'            => 'after-pages',
+		'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+
+	// Register Before Footer widget area.
+	register_sidebar( array(
+		'name'          => esc_html__( 'Before Footer', 'gt-drive' ),
+		'id'            => 'before-footer',
+		'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'gt-drive' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 
@@ -186,7 +252,7 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears in the first column in footer.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class = "widget-title">',
+		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
@@ -197,7 +263,7 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears in the second column in footer.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class = "widget-title">',
+		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
@@ -208,7 +274,7 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears in the third column in footer.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class = "widget-title">',
+		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
@@ -219,7 +285,7 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears in the fourth column in footer.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class = "widget-title">',
+		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 
@@ -230,7 +296,7 @@ function gt_drive_widgets_init() {
 		'description'   => esc_html_x( 'Appears in the bottom footer line.', 'widget area description', 'gt-drive' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class = "widget-title">',
+		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 }

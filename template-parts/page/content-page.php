@@ -22,4 +22,7 @@
 
 	</div><!-- .entry-content -->
 
+	<?php gt_drive_widget_area( 'after-pages' ); ?>
+	<?php do_action( 'gt_drive_after_pages' ); ?>
+
 </article>

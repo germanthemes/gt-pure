@@ -19,6 +19,7 @@
 	</div><!-- #content -->
 
 	<?php do_action( 'gt_drive_before_footer' ); ?>
+	<?php gt_drive_widget_area( 'before-footer' ); ?>
 
 	<footer id="colophon" class="site-footer">
 

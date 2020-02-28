@@ -27,4 +27,7 @@
 
 	</div><!-- .entry-content -->
 
+	<?php gt_drive_widget_area( 'after-posts' ); ?>
+	<?php do_action( 'gt_drive_after_posts' ); ?>
+
 </article>
