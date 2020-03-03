@@ -7,6 +7,25 @@
  */
 
 ( function( wp, $ ) {
+
+	// Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
+	wp.customize( 'custom_logo', function( setting ) {
+		var setupControl = function( control ) {
+			var setActiveState, isDisplayed;
+			isDisplayed = function() {
+				return '' !== setting.get();
+			};
+			setActiveState = function() {
+				control.active.set( isDisplayed() );
+			};
+			setActiveState();
+			setting.bind( setActiveState );
+			control.active.validate = isDisplayed;
+		};
+		wp.customize.control( 'gt_drive_theme_options[retina_logo_title]', setupControl );
+		wp.customize.control( 'gt_drive_theme_options[retina_logo]', setupControl );
+	} );
+
 	/**
 	 * The Customizer looks for wp.customizer.controlConstructor[type] functions
 	 * where type == the type member of a WP_Customize_Control
