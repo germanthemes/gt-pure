@@ -12,9 +12,10 @@
 }
 
 #customize-control-gt_drive_theme_options-site_title {
-	margin-bottom: 6px;
+	margin-bottom: 4px;
 }
 
+#customize-control-gt_drive_theme_options-retina_logo_title,
 #customize-control-gt_drive_theme_options-header_search_title {
 	margin-bottom: 0;
 }
