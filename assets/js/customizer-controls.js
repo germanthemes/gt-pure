@@ -10,6 +10,13 @@
 
 	// Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
 	wp.customize( 'custom_logo', function( setting ) {
+		setting.bind( function( value ) { 
+			if ( '' !== value ) {
+				// Set retina logo option to false when a new logo image is uploaded.
+				wp.customize.instance( 'gt_drive_theme_options[retina_logo]' ).set( false );
+			}
+		});
+
 		var setupControl = function( control ) {
 			var setActiveState, isDisplayed;
 			isDisplayed = function() {
