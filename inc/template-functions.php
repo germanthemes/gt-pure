@@ -92,6 +92,10 @@ function gt_drive_is_blog_page() {
  * @return void
  */
 function gt_drive_retina_logo() {
+	// Return early if there is no logo image or option for retina logo is disabled.
+	if ( ! has_custom_logo() or false === gt_drive_get_option( 'retina_logo' ) ) {
+		return;
+	}
 
 	// Get Logo Image.
 	$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );

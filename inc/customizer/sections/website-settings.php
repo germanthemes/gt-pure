@@ -28,6 +28,32 @@ function gt_drive_customize_register_website_settings( $wp_customize ) {
 		'render_callback' => 'gt_drive_customize_partial_blogdescription',
 	) );
 
+	// Add Retina Logo Headline.
+	$wp_customize->add_control( new GT_Drive_Customize_Header_Control(
+		$wp_customize, 'gt_drive_theme_options[retina_logo_title]', array(
+			'label'    => esc_html__( 'Retina Logo', 'gt-drive' ),
+			'section'  => 'title_tagline',
+			'settings' => array(),
+			'priority' => 8,
+		)
+	) );
+
+	// Add Retina Logo Setting.
+	$wp_customize->add_setting( 'gt_drive_theme_options[retina_logo]', array(
+		'default'           => false,
+		'type'              => 'option',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'gt_drive_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control( 'gt_drive_theme_options[retina_logo]', array(
+		'label'    => esc_html__( 'Scale down logo image to look sharp on high resolution screens', 'gt-drive' ),
+		'section'  => 'title_tagline',
+		'settings' => 'gt_drive_theme_options[retina_logo]',
+		'type'     => 'checkbox',
+		'priority' => 9,
+	) );
+
 	// Add Display Site Title Setting.
 	$wp_customize->add_setting( 'gt_drive_theme_options[site_title]', array(
 		'default'           => true,

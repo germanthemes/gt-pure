@@ -49,6 +49,7 @@ function gt_drive_theme_options() {
 function gt_drive_default_options() {
 
 	$default_options = array(
+		'retina_logo'        => false,
 		'site_title'         => true,
 		'site_description'   => true,
 		'header_search'      => false,
