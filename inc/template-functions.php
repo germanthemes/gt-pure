@@ -87,6 +87,25 @@ function gt_drive_is_blog_page() {
 
 
 /**
+ * Add custom CSS to scale down logo image for retina displays.
+ *
+ * @return void
+ */
+function gt_drive_retina_logo() {
+
+	// Get Logo Image.
+	$logo = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+
+	// Create CSS.
+	$css = '.site-logo .custom-logo { width: ' . absint( floor( $logo[1] / 2 ) ) . 'px; }';
+
+	// Add Custom CSS.
+	wp_add_inline_style( 'gt-drive-stylesheet', $css );
+}
+add_filter( 'wp_enqueue_scripts', 'gt_drive_retina_logo', 11 );
+
+
+/**
  * Add dropdown icon if menu item has children.
  *
  * @param  string $title The menu item's title.
