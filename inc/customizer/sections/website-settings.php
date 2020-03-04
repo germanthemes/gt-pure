@@ -47,7 +47,7 @@ function gt_drive_customize_register_website_settings( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'gt_drive_theme_options[retina_logo]', array(
-		'label'    => esc_html__( 'Scale down logo image to look sharp on high resolution screens', 'gt-drive' ),
+		'label'    => esc_html__( 'Scale down logo image for retina displays', 'gt-drive' ),
 		'section'  => 'title_tagline',
 		'settings' => 'gt_drive_theme_options[retina_logo]',
 		'type'     => 'checkbox',
