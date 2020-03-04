@@ -3,7 +3,7 @@
  * Template Name: Full-width / No Title
  * Template Post Type: page
  *
- * Description: A custom template for displaying a fullwidth layout.
+ * Description: A custom template for displaying a fullwidth layout with no page title.
  *
  * @package GT Drive
  */

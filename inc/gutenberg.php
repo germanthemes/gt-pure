@@ -146,7 +146,7 @@ function gt_drive_gutenberg_add_admin_body_class( $classes ) {
 	}
 
 	// Fullwidth Page Template?
-	if ( 'templates/template-full-width.php' === get_page_template_slug( $post->ID ) ) {
+	if ( 'templates/template-fullwidth.php' === get_page_template_slug( $post->ID ) ) {
 		$classes .= ' gt-fullwidth-page-layout ';
 	}
 
@@ -156,7 +156,7 @@ function gt_drive_gutenberg_add_admin_body_class( $classes ) {
 	}
 
 	// Full-width / No Title Page Template?
-	if ( 'templates/template-full-width-no-title.php' === get_page_template_slug( $post->ID ) ) {
+	if ( 'templates/template-fullwidth-no-title.php' === get_page_template_slug( $post->ID ) ) {
 		$classes .= ' gt-fullwidth-page-layout gt-page-title-hidden ';
 	}
 

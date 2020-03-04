@@ -27,13 +27,13 @@ class pageTemplateBodyClass extends Component {
 			return null;
 		}
 
-		if ( 'templates/template-full-width.php' === pageTemplate ) {
+		if ( 'templates/template-fullwidth.php' === pageTemplate ) {
 			document.body.classList.add( 'gt-fullwidth-page-layout' );
 			document.body.classList.remove( 'gt-page-title-hidden' );
 		} else if ( 'templates/template-no-title.php' === pageTemplate ) {
 			document.body.classList.add( 'gt-page-title-hidden' );
 			document.body.classList.remove( 'gt-fullwidth-page-layout' );
-		} else if ( 'templates/template-full-width-no-title.php' === pageTemplate ) {
+		} else if ( 'templates/template-fullwidth-no-title.php' === pageTemplate ) {
 			document.body.classList.add( 'gt-fullwidth-page-layout' );
 			document.body.classList.add( 'gt-page-title-hidden' );
 		} else {
