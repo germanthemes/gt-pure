@@ -1,7 +1,7 @@
 /**
  * Editor Theme Settings
  * 
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**

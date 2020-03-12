@@ -3,7 +3,7 @@
  * Footer Copyright
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 

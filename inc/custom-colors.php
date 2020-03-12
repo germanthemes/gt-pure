@@ -4,13 +4,13 @@
  *
  * Generates Custom CSS code for Color Settings
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
  * Custom Colors Class
  */
-class GT_Drive_Custom_Colors {
+class GT_Pure_Custom_Colors {
 
 	/**
 	 * Actions Setup
@@ -30,14 +30,14 @@ class GT_Drive_Custom_Colors {
 	 * Add Font Family CSS styles in the head area of the theme.
 	 */
 	static function add_custom_colors_in_frontend() {
-		wp_add_inline_style( 'gt-drive-stylesheet', self::get_custom_colors_css() );
+		wp_add_inline_style( 'gt-pure-stylesheet', self::get_custom_colors_css() );
 	}
 
 	/**
 	 * Add Font Family CSS styles in the head area of the Gutenberg editor.
 	 */
 	static function add_custom_colors_in_editor() {
-		wp_add_inline_style( 'gt-drive-editor-styles', self::get_custom_colors_css() );
+		wp_add_inline_style( 'gt-pure-editor-styles', self::get_custom_colors_css() );
 	}
 
 	/**
@@ -48,10 +48,10 @@ class GT_Drive_Custom_Colors {
 	static function get_custom_colors_css() {
 
 		// Get theme options from database.
-		$theme_options = gt_drive_theme_options();
+		$theme_options = gt_pure_theme_options();
 
 		// Get default colors.
-		$default = gt_drive_default_options();
+		$default = gt_pure_default_options();
 
 		// Color Variables.
 		$color_variables = '';
@@ -190,4 +190,4 @@ class GT_Drive_Custom_Colors {
 }
 
 // Run Class.
-GT_Drive_Custom_Colors::setup();
+GT_Pure_Custom_Colors::setup();

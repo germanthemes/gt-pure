@@ -3,7 +3,7 @@
  *
  * Adds Javascript for Customizer Controls.
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 ( function( wp, $ ) {
@@ -13,7 +13,7 @@
 		setting.bind( function( value ) { 
 			if ( '' !== value ) {
 				// Set retina logo option to false when a new logo image is uploaded.
-				wp.customize.instance( 'gt_drive_theme_options[retina_logo]' ).set( false );
+				wp.customize.instance( 'gt_pure_theme_options[retina_logo]' ).set( false );
 			}
 		});
 
@@ -29,15 +29,15 @@
 			setting.bind( setActiveState );
 			control.active.validate = isDisplayed;
 		};
-		wp.customize.control( 'gt_drive_theme_options[retina_logo_title]', setupControl );
-		wp.customize.control( 'gt_drive_theme_options[retina_logo]', setupControl );
+		wp.customize.control( 'gt_pure_theme_options[retina_logo_title]', setupControl );
+		wp.customize.control( 'gt_pure_theme_options[retina_logo]', setupControl );
 	} );
 
 	/**
 	 * The Customizer looks for wp.customizer.controlConstructor[type] functions
 	 * where type == the type member of a WP_Customize_Control
 	 */
-	wp.customize.controlConstructor.gt_drive_custom_font = wp.customize.Control.extend({
+	wp.customize.controlConstructor.gt_pure_custom_font = wp.customize.Control.extend({
 		/**
 		 * This method is called when the control is ready to run.
 		 */
@@ -131,7 +131,7 @@
 	 * The Customizer looks for wp.customizer.controlConstructor[type] functions
 	 * where type == the type member of a WP_Customize_Control
 	 */
-	wp.customize.controlConstructor.gt_drive_license_key = wp.customize.Control.extend({
+	wp.customize.controlConstructor.gt_pure_license_key = wp.customize.Control.extend({
 		/**
 		 * This method is called when the control is ready to run.
 		 */

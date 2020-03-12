@@ -2,7 +2,7 @@
 /**
  * Plugin Control for the Customizer
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -13,7 +13,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	/**
 	 * Displays a bold label text. Used to create headlines for radio buttons and description sections.
 	 */
-	class GT_Drive_Customize_Plugin_Control extends WP_Customize_Control {
+	class GT_Pure_Customize_Plugin_Control extends WP_Customize_Control {
 		/**
 		 * Render Control
 		 */
@@ -30,7 +30,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			<p>
 				<a href="<?php echo esc_url( network_admin_url( 'plugin-install.php?tab=search&type=author&s=germanthemes' ) ); ?>" class="button button-primary">
-					<?php esc_html_e( 'Install Plugin', 'gt-drive' ); ?>
+					<?php esc_html_e( 'Install Plugin', 'gt-pure' ); ?>
 				</a>
 			</p>
 

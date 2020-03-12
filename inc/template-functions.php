@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -11,10 +11,10 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function gt_drive_body_classes( $classes ) {
+function gt_pure_body_classes( $classes ) {
 
 	// Get theme options from database.
-	$theme_options = gt_drive_theme_options();
+	$theme_options = gt_pure_theme_options();
 
 	// Hide Site Title?
 	if ( false === $theme_options['site_title'] ) {
@@ -62,7 +62,7 @@ function gt_drive_body_classes( $classes ) {
 	}
 
 	// Add Blog Sidebar class.
-	if ( is_active_sidebar( 'sidebar-1' ) && gt_drive_is_blog_page() ) {
+	if ( is_active_sidebar( 'sidebar-1' ) && gt_pure_is_blog_page() ) {
 		$classes[] = 'has-blog-sidebar';
 	}
 
@@ -73,7 +73,7 @@ function gt_drive_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'gt_drive_body_classes' );
+add_filter( 'body_class', 'gt_pure_body_classes' );
 
 
 /**
@@ -81,7 +81,7 @@ add_filter( 'body_class', 'gt_drive_body_classes' );
  *
  * @return bool
  */
-function gt_drive_is_blog_page() {
+function gt_pure_is_blog_page() {
 	return ( 'post' === get_post_type() ) && ( is_home() || is_archive() || is_single() );
 }
 
@@ -91,9 +91,9 @@ function gt_drive_is_blog_page() {
  *
  * @return void
  */
-function gt_drive_retina_logo() {
+function gt_pure_retina_logo() {
 	// Return early if there is no logo image or option for retina logo is disabled.
-	if ( ! has_custom_logo() or false === gt_drive_get_option( 'retina_logo' ) ) {
+	if ( ! has_custom_logo() or false === gt_pure_get_option( 'retina_logo' ) ) {
 		return;
 	}
 
@@ -104,9 +104,9 @@ function gt_drive_retina_logo() {
 	$css = '.site-logo .custom-logo { width: ' . absint( floor( $logo[1] / 2 ) ) . 'px; }';
 
 	// Add Custom CSS.
-	wp_add_inline_style( 'gt-drive-stylesheet', $css );
+	wp_add_inline_style( 'gt-pure-stylesheet', $css );
 }
-add_filter( 'wp_enqueue_scripts', 'gt_drive_retina_logo', 11 );
+add_filter( 'wp_enqueue_scripts', 'gt_pure_retina_logo', 11 );
 
 
 /**
@@ -118,18 +118,18 @@ add_filter( 'wp_enqueue_scripts', 'gt_drive_retina_logo', 11 );
  * @param  int    $depth Depth of menu item. Used for padding.
  * @return string $title The menu item's title with dropdown icon.
  */
-function gt_drive_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
+function gt_pure_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
 		foreach ( $item->classes as $value ) {
 			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
-				$title = $title . gt_drive_get_svg( 'expand' );
+				$title = $title . gt_pure_get_svg( 'expand' );
 			}
 		}
 	}
 
 	return $title;
 }
-add_filter( 'nav_menu_item_title', 'gt_drive_dropdown_icon_to_menu_link', 10, 4 );
+add_filter( 'nav_menu_item_title', 'gt_pure_dropdown_icon_to_menu_link', 10, 4 );
 
 
 /**
@@ -138,7 +138,7 @@ add_filter( 'nav_menu_item_title', 'gt_drive_dropdown_icon_to_menu_link', 10, 4 
  * @param string $icon SVG icon id.
  * @return string $svg SVG markup.
  */
-function gt_drive_get_svg( $icon = null ) {
+function gt_pure_get_svg( $icon = null ) {
 	// Return early if no icon was defined.
 	if ( empty( $icon ) ) {
 		return;
@@ -159,7 +159,7 @@ function gt_drive_get_svg( $icon = null ) {
  * @param string $icon SVG icon id.
  * @return string $svg SVG markup.
  */
-function gt_drive_get_social_svg( $icon = null ) {
+function gt_pure_get_social_svg( $icon = null ) {
 	// Return early if no icon was defined.
 	if ( empty( $icon ) ) {
 		return;
@@ -183,10 +183,10 @@ function gt_drive_get_social_svg( $icon = null ) {
  * @param  array   $args        wp_nav_menu() arguments.
  * @return string  $item_output The menu item output with social icon.
  */
-function gt_drive_social_icons_menu_walker( $item_output, $item, $depth, $args ) {
+function gt_pure_social_icons_menu_walker( $item_output, $item, $depth, $args ) {
 
 	// Get supported social icons.
-	$social_icons = gt_drive_supported_social_icons();
+	$social_icons = gt_pure_supported_social_icons();
 
 	// Change SVG icon inside social links menu if there is supported URL.
 	if ( 'social-header' === $args->theme_location || 'social-footer' === $args->theme_location ) {
@@ -196,12 +196,12 @@ function gt_drive_social_icons_menu_walker( $item_output, $item, $depth, $args )
 				$icon = esc_attr( $value );
 			}
 		}
-		$item_output = str_replace( $args->link_after, '</span>' . gt_drive_get_social_svg( $icon ), $item_output );
+		$item_output = str_replace( $args->link_after, '</span>' . gt_pure_get_social_svg( $icon ), $item_output );
 	}
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'gt_drive_social_icons_menu_walker', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'gt_pure_social_icons_menu_walker', 10, 4 );
 
 
 /**
@@ -209,7 +209,7 @@ add_filter( 'walker_nav_menu_start_el', 'gt_drive_social_icons_menu_walker', 10,
  *
  * @return array $social_links_icons
  */
-function gt_drive_supported_social_icons() {
+function gt_pure_supported_social_icons() {
 	// Supported social links icons.
 	$supported_social_icons = array(
 		'500px'           => '500px',

@@ -4,7 +4,7 @@
  *
  * Register License Settings
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -12,40 +12,40 @@
  *
  * @param object $wp_customize / Customizer Object.
  */
-function gt_drive_customize_register_license_settings( $wp_customize ) {
+function gt_pure_customize_register_license_settings( $wp_customize ) {
 
 	// Add Section for License.
-	$wp_customize->add_section( 'gt_drive_section_license', array(
-		'title'       => esc_html__( 'License', 'gt-drive' ),
-		'description' => esc_html__( 'Please enter your license key. An active license key is necessary for automatic theme updates and support.', 'gt-drive' ),
+	$wp_customize->add_section( 'gt_pure_section_license', array(
+		'title'       => esc_html__( 'License', 'gt-pure' ),
+		'description' => esc_html__( 'Please enter your license key. An active license key is necessary for automatic theme updates and support.', 'gt-pure' ),
 		'priority'    => 60,
-		'panel'       => 'gt_drive_options_panel',
+		'panel'       => 'gt_pure_options_panel',
 	) );
 
 	// Add Theme Links control.
-	$wp_customize->add_control( new GT_Drive_Customize_Links_Control(
-		$wp_customize, 'gt_drive_theme_links', array(
-			'section'  => 'gt_drive_section_license',
+	$wp_customize->add_control( new GT_Pure_Customize_Links_Control(
+		$wp_customize, 'gt_pure_theme_links', array(
+			'section'  => 'gt_pure_section_license',
 			'settings' => array(),
 			'priority' => 10,
 		)
 	) );
 
 	// Add License Key setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[license_key]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[license_key]', array(
 		'default'           => '',
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( new GT_Drive_Customize_License_Control(
+	$wp_customize->add_control( new GT_Pure_Customize_License_Control(
 		$wp_customize, 'license_key', array(
-			'label'    => esc_html__( 'License Key', 'gt-drive' ),
-			'section'  => 'gt_drive_section_license',
-			'settings' => 'gt_drive_theme_options[license_key]',
+			'label'    => esc_html__( 'License Key', 'gt-pure' ),
+			'section'  => 'gt_pure_section_license',
+			'settings' => 'gt_pure_theme_options[license_key]',
 			'priority' => 20,
 		)
 	) );
 }
-add_action( 'customize_register', 'gt_drive_customize_register_license_settings' );
+add_action( 'customize_register', 'gt_pure_customize_register_license_settings' );

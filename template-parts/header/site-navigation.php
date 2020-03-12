@@ -3,7 +3,7 @@
  * Main Navigation
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 ?>
 
@@ -11,17 +11,17 @@
 
 	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
 		<?php
-		echo gt_drive_get_svg( 'menu' );
-		echo gt_drive_get_svg( 'close' );
+		echo gt_pure_get_svg( 'menu' );
+		echo gt_pure_get_svg( 'close' );
 		?>
-		<span class="menu-toggle-text"><?php esc_html_e( 'Menu', 'gt-drive' ); ?></span>
+		<span class="menu-toggle-text"><?php esc_html_e( 'Menu', 'gt-pure' ); ?></span>
 	</button>
 
 	<div class="primary-navigation">
 
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-drive' ); ?>">
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-pure' ); ?>">
 
 				<?php
 				wp_nav_menu(
@@ -39,7 +39,7 @@
 
 			<div class="header-social-icons social-icons-nav">
 
-				<?php gt_drive_social_icons_menu( 'social-header' ); ?>
+				<?php gt_pure_social_icons_menu( 'social-header' ); ?>
 
 			</div>
 
@@ -49,4 +49,4 @@
 
 <?php endif; ?>
 
-<?php gt_drive_header_search_icon(); ?>
+<?php gt_pure_header_search_icon(); ?>

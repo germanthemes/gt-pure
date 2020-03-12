@@ -1,7 +1,7 @@
 /**
  * Header Search JS
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 ( function( $ ) {

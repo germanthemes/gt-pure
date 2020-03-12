@@ -7,7 +7,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 ?>
@@ -18,8 +18,8 @@
 
 	</div><!-- #content -->
 
-	<?php do_action( 'gt_drive_before_footer' ); ?>
-	<?php gt_drive_widget_area( 'before-footer' ); ?>
+	<?php do_action( 'gt_pure_before_footer' ); ?>
+	<?php gt_pure_widget_area( 'before-footer' ); ?>
 
 	<footer id="colophon" class="site-footer">
 
@@ -31,7 +31,7 @@
 
 	</footer>
 
-	<?php do_action( 'gt_drive_after_footer' ); ?>
+	<?php do_action( 'gt_pure_after_footer' ); ?>
 
 </div><!-- #page -->
 

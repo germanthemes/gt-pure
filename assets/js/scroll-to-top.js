@@ -1,8 +1,8 @@
-/* global gtDriveScrollButton */
+/* global gtPureScrollButton */
 /**
  * Scroll to Top Button
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 ( function( $ ) {
@@ -45,7 +45,7 @@
 	$( document ).ready( function() {
 
 		/* Add Button to HTML DOM */
-		$( 'body' ).append( '<button id=\"scroll-to-top\" class=\"scroll-to-top-button\">' + gtDriveScrollButton + '</button>' );
+		$( 'body' ).append( '<button id=\"scroll-to-top\" class=\"scroll-to-top-button\">' + gtPureScrollButton + '</button>' );
 
 		/* Add Scroll To Top Functionality */
 		$( '#scroll-to-top' ).scrollToTop();

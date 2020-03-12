@@ -5,7 +5,7 @@
  * Used to validate the user input of the theme settings
  * Based on https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -14,7 +14,7 @@
  * @param bool $checked Whether the checkbox is checked.
  * @return bool Whether the checkbox is checked.
  */
-function gt_drive_sanitize_checkbox( $checked ) {
+function gt_pure_sanitize_checkbox( $checked ) {
 
 	// Boolean check.
 	return ( ( isset( $checked ) && true === $checked ) ? true : false );
@@ -30,7 +30,7 @@ function gt_drive_sanitize_checkbox( $checked ) {
  * @param WP_Customize_Setting $setting Setting instance.
  * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
  */
-function gt_drive_sanitize_select( $input, $setting ) {
+function gt_pure_sanitize_select( $input, $setting ) {
 
 	// Ensure input is a slug.
 	$input = sanitize_key( $input );

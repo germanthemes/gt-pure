@@ -1,12 +1,12 @@
 <?php
 /**
- * GT Drive back compat functionality
+ * GT Pure back compat functionality
  *
- * Prevents GT Drive from running on WordPress versions prior to 5.3,
+ * Prevents GT Pure from running on WordPress versions prior to 5.3,
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 5.3.
  *
- * @package GT Drive
+ * @package GT Pure
  *
  * Original Code: Twenty Seventeen http://wordpress.org/themes/twentyseventeen
  * Original Copyright: the WordPress team and contributors.
@@ -17,29 +17,29 @@
  */
 
 /**
- * Prevent switching to GT Drive on old versions of WordPress.
+ * Prevent switching to GT Pure on old versions of WordPress.
  *
  * Switches to the default theme.
  *
- * @since GT Drive 1.0
+ * @since GT Pure 1.0
  */
-function gt_drive_switch_theme() {
+function gt_pure_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'gt_drive_upgrade_notice' );
+	add_action( 'admin_notices', 'gt_pure_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'gt_drive_switch_theme' );
+add_action( 'after_switch_theme', 'gt_pure_switch_theme' );
 
 /**
  * Adds a message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
- * GT Drive on WordPress versions prior to 5.3.
+ * GT Pure on WordPress versions prior to 5.3.
  *
  * @global string $wp_version WordPress version.
  */
-function gt_drive_upgrade_notice() {
-	$message = sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-drive' ), 'GT Drive', '5.3', $GLOBALS['wp_version'] );
+function gt_pure_upgrade_notice() {
+	$message = sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-pure' ), 'GT Pure', '5.3', $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -48,21 +48,21 @@ function gt_drive_upgrade_notice() {
  *
  * @global string $wp_version WordPress version.
  */
-function gt_drive_customize() {
-	wp_die( sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-drive' ), 'GT Drive', '5.3', $GLOBALS['wp_version'] ), '', array(
+function gt_pure_customize() {
+	wp_die( sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-pure' ), 'GT Pure', '5.3', $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'gt_drive_customize' );
+add_action( 'load-customize.php', 'gt_pure_customize' );
 
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 5.3.
  *
  * @global string $wp_version WordPress version.
  */
-function gt_drive_preview() {
+function gt_pure_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-drive' ), 'GT Drive', '5.3', $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( esc_html__( '%1$s requires at least WordPress version %2$s. You are running version %3$s. Please upgrade and try again.', 'gt-pure' ), 'GT Pure', '5.3', $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'gt_drive_preview' );
+add_action( 'template_redirect', 'gt_pure_preview' );

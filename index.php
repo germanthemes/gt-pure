@@ -10,7 +10,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 get_header();
@@ -24,7 +24,7 @@ if ( have_posts() ) :
 
 	endwhile;
 
-	gt_drive_pagination();
+	gt_pure_pagination();
 
 else :
 

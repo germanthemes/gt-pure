@@ -1,12 +1,12 @@
 <?php
 /**
- * GT Drive functions and definitions
+ * GT Pure functions and definitions
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
- * GT Drive only works in WordPress 5.3 or later.
+ * GT Pure only works in WordPress 5.3 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
 	require get_template_directory() . '/inc/admin/back-compat.php';
@@ -21,10 +21,10 @@ if ( version_compare( $GLOBALS['wp_version'], '5.3', '<' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function gt_drive_setup() {
+function gt_pure_setup() {
 
 	// Make theme available for translation.
-	load_theme_textdomain( 'gt-drive', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'gt-pure', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -39,14 +39,14 @@ function gt_drive_setup() {
 	set_post_thumbnail_size( 800, 500, true );
 
 	// Add image size for header image on single posts and pages.
-	add_image_size( 'gt-drive-header-image', 9999, 640, true );
+	add_image_size( 'gt-pure-header-image', 9999, 640, true );
 
 	// Register Navigation Menus.
 	register_nav_menus( array(
-		'primary'       => esc_html__( 'Main Navigation', 'gt-drive' ),
-		'footer'        => esc_html__( 'Footer Navigation', 'gt-drive' ),
-		'social-header' => esc_html__( 'Social Icons (Header)', 'gt-drive' ),
-		'social-footer' => esc_html__( 'Social Icons (Footer)', 'gt-drive' ),
+		'primary'       => esc_html__( 'Main Navigation', 'gt-pure' ),
+		'footer'        => esc_html__( 'Footer Navigation', 'gt-pure' ),
+		'social-header' => esc_html__( 'Social Icons (Header)', 'gt-pure' ),
+		'social-footer' => esc_html__( 'Social Icons (Footer)', 'gt-pure' ),
 	) );
 
 	// Switch default core markup for galleries and captions to output valid HTML5.
@@ -58,7 +58,7 @@ function gt_drive_setup() {
 	) );
 
 	// Set up the WordPress core custom logo feature.
-	add_theme_support( 'custom-logo', apply_filters( 'gt_drive_custom_logo_args', array(
+	add_theme_support( 'custom-logo', apply_filters( 'gt_pure_custom_logo_args', array(
 		'height'      => 60,
 		'width'       => 300,
 		'flex-height' => true,
@@ -66,21 +66,21 @@ function gt_drive_setup() {
 	) ) );
 
 	// Set up the WordPress core custom header feature.
-	add_theme_support( 'custom-header', apply_filters( 'gt_drive_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'gt_pure_custom_header_args', array(
 		'header-text' => false,
 		'width'       => 1920,
 		'height'      => 640,
 	) ) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'gt_drive_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'gt_pure_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
 
 	// Add Theme Support for Selective Refresh in Customizer.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
-add_action( 'after_setup_theme', 'gt_drive_setup' );
+add_action( 'after_setup_theme', 'gt_pure_setup' );
 
 
 /**
@@ -89,47 +89,47 @@ add_action( 'after_setup_theme', 'gt_drive_setup' );
  *
  * @global int $content_width
  */
-function gt_drive_content_width() {
+function gt_pure_content_width() {
 	// Set global variable for content width.
-	$GLOBALS['content_width'] = apply_filters( 'gt_drive_content_width', 800 );
+	$GLOBALS['content_width'] = apply_filters( 'gt_pure_content_width', 800 );
 }
-add_action( 'after_setup_theme', 'gt_drive_content_width', 0 );
+add_action( 'after_setup_theme', 'gt_pure_content_width', 0 );
 
 
 /**
  * Enqueue scripts and styles.
  */
-function gt_drive_scripts() {
+function gt_pure_scripts() {
 
 	// Get Theme Version.
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Register and Enqueue Stylesheet.
-	wp_enqueue_style( 'gt-drive-stylesheet', get_stylesheet_uri(), array(), $theme_version );
+	wp_enqueue_style( 'gt-pure-stylesheet', get_stylesheet_uri(), array(), $theme_version );
 
 	// Register and enqueue navigation.js.
 	if ( has_nav_menu( 'primary' ) or has_nav_menu( 'social-header' ) ) {
-		wp_enqueue_script( 'gt-drive-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '1.0', true );
-		$gt_drive_l10n = array(
-			'expand'   => esc_html__( 'Expand child menu', 'gt-drive' ),
-			'collapse' => esc_html__( 'Collapse child menu', 'gt-drive' ),
-			'icon'     => gt_drive_get_svg( 'expand' ),
+		wp_enqueue_script( 'gt-pure-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), array( 'jquery' ), '1.0', true );
+		$gt_pure_l10n = array(
+			'expand'   => esc_html__( 'Expand child menu', 'gt-pure' ),
+			'collapse' => esc_html__( 'Collapse child menu', 'gt-pure' ),
+			'icon'     => gt_pure_get_svg( 'expand' ),
 		);
-		wp_localize_script( 'gt-drive-navigation', 'gtDriveScreenReaderText', $gt_drive_l10n );
+		wp_localize_script( 'gt-pure-navigation', 'gtPureScreenReaderText', $gt_pure_l10n );
 	}
 
 	// Register and enqueue header-search.js if enabled
-	if ( true === gt_drive_get_option( 'header_search' ) || is_customize_preview() ) :
+	if ( true === gt_pure_get_option( 'header_search' ) || is_customize_preview() ) :
 
-		wp_enqueue_script( 'gt-drive-header-search', get_theme_file_uri( '/assets/js/header-search.min.js' ), array( 'jquery' ), '20200226', true );
+		wp_enqueue_script( 'gt-pure-header-search', get_theme_file_uri( '/assets/js/header-search.min.js' ), array( 'jquery' ), '20200226', true );
 
 	endif;
 
 	// Register and enqueue scroll-to-top.js if enabled
-	if ( true === gt_drive_get_option( 'scroll_to_top' ) ) :
+	if ( true === gt_pure_get_option( 'scroll_to_top' ) ) :
 
-		wp_enqueue_script( 'gt-drive-scroll-to-top', get_theme_file_uri( '/assets/js/scroll-to-top.min.js' ), array( 'jquery' ), '20200228', true );
-		wp_localize_script( 'gt-drive-scroll-to-top', 'gtDriveScrollButton', gt_drive_get_svg( 'collapse' ) );
+		wp_enqueue_script( 'gt-pure-scroll-to-top', get_theme_file_uri( '/assets/js/scroll-to-top.min.js' ), array( 'jquery' ), '20200228', true );
+		wp_localize_script( 'gt-pure-scroll-to-top', 'gtPureScrollButton', gt_pure_get_svg( 'collapse' ) );
 
 	endif;
 
@@ -141,17 +141,17 @@ function gt_drive_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'gt_drive_scripts' );
+add_action( 'wp_enqueue_scripts', 'gt_pure_scripts' );
 
 
 /**
 * Enqueue theme fonts.
 */
-function gt_drive_theme_fonts() {
-	wp_enqueue_style( 'gt-drive-theme-fonts', get_template_directory_uri() . '/assets/css/theme-fonts.css', array(), '20200219' );
+function gt_pure_theme_fonts() {
+	wp_enqueue_style( 'gt-pure-theme-fonts', get_template_directory_uri() . '/assets/css/theme-fonts.css', array(), '20200219' );
 }
-add_action( 'wp_enqueue_scripts', 'gt_drive_theme_fonts', 1 );
-add_action( 'enqueue_block_editor_assets', 'gt_drive_theme_fonts', 1 );
+add_action( 'wp_enqueue_scripts', 'gt_pure_theme_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'gt_pure_theme_fonts', 1 );
 
 
 /**
@@ -159,13 +159,13 @@ add_action( 'enqueue_block_editor_assets', 'gt_drive_theme_fonts', 1 );
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function gt_drive_widgets_init() {
+function gt_pure_widgets_init() {
 
 	// Register Before Header widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Before Header', 'gt-drive' ),
+		'name'          => esc_html__( 'Before Header', 'gt-pure' ),
 		'id'            => 'before-header',
-		'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears above the header area.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -174,9 +174,9 @@ function gt_drive_widgets_init() {
 
 	// Register After Header widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'After Header', 'gt-drive' ),
+		'name'          => esc_html__( 'After Header', 'gt-pure' ),
 		'id'            => 'after-header',
-		'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears below the header area.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -185,9 +185,9 @@ function gt_drive_widgets_init() {
 
 	// Register Before Blog widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Before Content', 'gt-drive' ),
+		'name'          => esc_html__( 'Before Content', 'gt-pure' ),
 		'id'            => 'before-content',
-		'description'   => esc_html_x( 'Appears above the content area.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears above the content area.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -196,9 +196,9 @@ function gt_drive_widgets_init() {
 
 	// Register Blog Sidebar widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'gt-drive' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'gt-pure' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html_x( 'Appears on blog pages and single posts.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears on blog pages and single posts.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -207,9 +207,9 @@ function gt_drive_widgets_init() {
 
 	// Register After Posts widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'After Single Posts', 'gt-drive' ),
+		'name'          => esc_html__( 'After Single Posts', 'gt-pure' ),
 		'id'            => 'after-posts',
-		'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears below single posts.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -218,9 +218,9 @@ function gt_drive_widgets_init() {
 
 	// Register After Pages widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'After Pages', 'gt-drive' ),
+		'name'          => esc_html__( 'After Pages', 'gt-pure' ),
 		'id'            => 'after-pages',
-		'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears below static pages.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -229,9 +229,9 @@ function gt_drive_widgets_init() {
 
 	// Register Before Footer widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Before Footer', 'gt-drive' ),
+		'name'          => esc_html__( 'Before Footer', 'gt-pure' ),
 		'id'            => 'before-footer',
-		'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears above the footer area.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -240,9 +240,9 @@ function gt_drive_widgets_init() {
 
 	// Register Footer Column 1 widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 1', 'gt-drive' ),
+		'name'          => esc_html__( 'Footer Column 1', 'gt-pure' ),
 		'id'            => 'footer-column-1',
-		'description'   => esc_html_x( 'Appears in the first column in footer.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears in the first column in footer.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -251,9 +251,9 @@ function gt_drive_widgets_init() {
 
 	// Register Footer Column 2 widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 2', 'gt-drive' ),
+		'name'          => esc_html__( 'Footer Column 2', 'gt-pure' ),
 		'id'            => 'footer-column-2',
-		'description'   => esc_html_x( 'Appears in the second column in footer.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears in the second column in footer.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -262,9 +262,9 @@ function gt_drive_widgets_init() {
 
 	// Register Footer Column 3 widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 3', 'gt-drive' ),
+		'name'          => esc_html__( 'Footer Column 3', 'gt-pure' ),
 		'id'            => 'footer-column-3',
-		'description'   => esc_html_x( 'Appears in the third column in footer.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears in the third column in footer.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -273,9 +273,9 @@ function gt_drive_widgets_init() {
 
 	// Register Footer Column 4 widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column 4', 'gt-drive' ),
+		'name'          => esc_html__( 'Footer Column 4', 'gt-pure' ),
 		'id'            => 'footer-column-4',
-		'description'   => esc_html_x( 'Appears in the fourth column in footer.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears in the fourth column in footer.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -284,16 +284,16 @@ function gt_drive_widgets_init() {
 
 	// Register Footer Copyright widget area.
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Copyright', 'gt-drive' ),
+		'name'          => esc_html__( 'Footer Copyright', 'gt-pure' ),
 		'id'            => 'footer-copyright',
-		'description'   => esc_html_x( 'Appears in the bottom footer line.', 'widget area description', 'gt-drive' ),
+		'description'   => esc_html_x( 'Appears in the bottom footer line.', 'widget area description', 'gt-pure' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
 }
-add_action( 'widgets_init', 'gt_drive_widgets_init' );
+add_action( 'widgets_init', 'gt_pure_widgets_init' );
 
 
 /**
@@ -301,29 +301,29 @@ add_action( 'widgets_init', 'gt_drive_widgets_init' );
  *
  * @return void
  */
-function gt_drive_theme_updater() {
-	if ( '' !== gt_drive_get_option( 'license_key' ) ) :
+function gt_pure_theme_updater() {
+	if ( '' !== gt_pure_get_option( 'license_key' ) ) :
 
 		// Setup the updater.
-		$theme_updater = new GT_Drive_Theme_Updater(
+		$theme_updater = new GT_Pure_Theme_Updater(
 			array(
-				'remote_api_url' => GT_DRIVE_STORE_API_URL,
+				'remote_api_url' => GT_PURE_STORE_API_URL,
 				'version'        => '1.0',
-				'license'        => trim( gt_drive_get_option( 'license_key' ) ),
-				'item_id'        => GT_DRIVE_PRODUCT_ID,
-				'item_name'      => 'GT Drive',
-				'theme_slug'     => 'gt-drive',
+				'license'        => trim( gt_pure_get_option( 'license_key' ) ),
+				'item_id'        => GT_PURE_PRODUCT_ID,
+				'item_name'      => 'GT Pure',
+				'theme_slug'     => 'gt-pure',
 				'author'         => 'GermanThemes',
 			),
 			array(
-				'update-notice'    => __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update.", 'gt-drive' ),
-				'update-available' => __( '<strong>%1$s %2$s</strong> is available. <a href="%3$s" class="thickbox" title="%4$s">Check out what\'s new</a> or <a href="%5$s"%6$s>update now</a>.', 'gt-drive' ),
+				'update-notice'    => __( "Updating this theme will lose any customizations you have made. 'Cancel' to stop, 'OK' to update.", 'gt-pure' ),
+				'update-available' => __( '<strong>%1$s %2$s</strong> is available. <a href="%3$s" class="thickbox" title="%4$s">Check out what\'s new</a> or <a href="%5$s"%6$s>update now</a>.', 'gt-pure' ),
 			)
 		);
 
 	endif;
 }
-add_action( 'admin_init', 'gt_drive_theme_updater', 0 );
+add_action( 'admin_init', 'gt_pure_theme_updater', 0 );
 
 
 /**

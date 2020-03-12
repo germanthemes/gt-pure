@@ -1,8 +1,8 @@
-/* global gtDriveScreenReaderText */
+/* global gtPureScreenReaderText */
 /**
  * Theme Navigation
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 (function( $ ) {
@@ -12,8 +12,8 @@
 
 		// Add dropdown toggle that displays child menu items.
 		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false } )
-			.append( gtDriveScreenReaderText.icon )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: gtDriveScreenReaderText.expand } ) );
+			.append( gtPureScreenReaderText.icon )
+			.append( $( '<span />', { 'class': 'screen-reader-text', text: gtPureScreenReaderText.expand } ) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
@@ -22,7 +22,7 @@
 			.addClass( 'toggled-on' )
 			.attr( 'aria-expanded', 'true' )
 			.find( '.screen-reader-text' )
-			.text( gtDriveScreenReaderText.collapse );
+			.text( gtPureScreenReaderText.collapse );
 
 		// Set the active submenu initial state.
 		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
@@ -37,7 +37,7 @@
 
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 
-			screenReaderSpan.text( screenReaderSpan.text() === gtDriveScreenReaderText.expand ? gtDriveScreenReaderText.collapse : gtDriveScreenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === gtPureScreenReaderText.expand ? gtPureScreenReaderText.collapse : gtPureScreenReaderText.expand );
 		} );
 	}
 
@@ -60,7 +60,7 @@
 		// Add an initial value for the attribute.
 		menuToggle.attr( 'aria-expanded', 'false' );
 
-		menuToggle.on( 'click.gt_drive', function() {
+		menuToggle.on( 'click.gt_pure', function() {
 			siteNavContain.toggleClass( 'toggled-on' );
 			socialIcons.toggleClass( 'toggled-on' );
 
@@ -78,14 +78,14 @@
 		function toggleFocusClassTouchScreen() {
 			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-				$( document.body ).on( 'touchstart.gt_drive', function( e ) {
+				$( document.body ).on( 'touchstart.gt_pure', function( e ) {
 					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
 						$( '.main-navigation li' ).removeClass( 'focus' );
 					}
 				});
 
 				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-					.on( 'touchstart.gt_drive', function( e ) {
+					.on( 'touchstart.gt_pure', function( e ) {
 						var el = $( this ).parent( 'li' );
 
 						if ( ! el.hasClass( 'focus' ) ) {
@@ -96,16 +96,16 @@
 					});
 
 			} else {
-				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.gt_drive' );
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.gt_pure' );
 			}
 		}
 
 		if ( 'ontouchstart' in window ) {
-			$( window ).on( 'resize.gt_drive', toggleFocusClassTouchScreen );
+			$( window ).on( 'resize.gt_pure', toggleFocusClassTouchScreen );
 			toggleFocusClassTouchScreen();
 		}
 
-		siteNavigation.find( 'a' ).on( 'focus.gt_drive blur.gt_drive', function() {
+		siteNavigation.find( 'a' ).on( 'focus.gt_pure blur.gt_pure', function() {
 			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 		});
 	})();

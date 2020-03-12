@@ -3,7 +3,7 @@
  * The template for displaying single posts
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 ?>
 
@@ -11,11 +11,11 @@
 
 	<header class="post-header entry-header">
 
-		<?php gt_drive_post_image(); ?>
+		<?php gt_pure_post_image(); ?>
 
 		<?php the_title( '<h1 class="post-title entry-title">', '</h1>' ); ?>
 
-		<?php gt_drive_entry_meta(); ?>
+		<?php gt_pure_entry_meta(); ?>
 
 	</header><!-- .entry-header -->
 
@@ -23,11 +23,11 @@
 
 		<?php the_content(); ?>
 		<?php wp_link_pages(); ?>
-		<?php gt_drive_entry_tags(); ?>
+		<?php gt_pure_entry_tags(); ?>
 
 	</div><!-- .entry-content -->
 
-	<?php gt_drive_widget_area( 'after-posts' ); ?>
-	<?php do_action( 'gt_drive_after_posts' ); ?>
+	<?php gt_pure_widget_area( 'after-posts' ); ?>
+	<?php do_action( 'gt_pure_after_posts' ); ?>
 
 </article>

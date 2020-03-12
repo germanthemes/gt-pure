@@ -2,7 +2,7 @@
 /**
  * License Control for the Customizer
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -13,14 +13,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	/**
 	 * Displays a custom License control. Allows to switch fonts for particular elements on the theme.
 	 */
-	class GT_Drive_Customize_License_Control extends WP_Customize_Control {
+	class GT_Pure_Customize_License_Control extends WP_Customize_Control {
 
 		/**
 		 * Declare the control type. Critical for JS constructor.
 		 *
 		 * @var string
 		 */
-		public $type = 'gt_drive_license_key';
+		public $type = 'gt_pure_license_key';
 
 		/**
 		 * Localization Strings.
@@ -48,20 +48,20 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			// Make Buttons translateable.
 			$this->l10n = array(
-				'activate'     => esc_html__( 'Activate License', 'gt-drive' ),
-				'deactivate'   => esc_html__( 'Deactivate License', 'gt-drive' ),
-				'loading'      => esc_html__( 'Loading...', 'gt-drive' ),
-				'valid'        => esc_html__( 'Active', 'gt-drive' ),
-				'invalid'      => esc_html__( 'Invalid', 'gt-drive' ),
-				'expired'      => esc_html__( 'Expired', 'gt-drive' ),
-				'inactive'     => esc_html__( 'Inactive', 'gt-drive' ),
-				'valid_desc'   => esc_html__( 'You are receiving updates.', 'gt-drive' ),
-				'invalid_desc' => esc_html__( 'Please make sure you have not reached site limits and/or expiration date.', 'gt-drive' ),
-				'expired_desc' => esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'gt-drive' ),
+				'activate'     => esc_html__( 'Activate License', 'gt-pure' ),
+				'deactivate'   => esc_html__( 'Deactivate License', 'gt-pure' ),
+				'loading'      => esc_html__( 'Loading...', 'gt-pure' ),
+				'valid'        => esc_html__( 'Active', 'gt-pure' ),
+				'invalid'      => esc_html__( 'Invalid', 'gt-pure' ),
+				'expired'      => esc_html__( 'Expired', 'gt-pure' ),
+				'inactive'     => esc_html__( 'Inactive', 'gt-pure' ),
+				'valid_desc'   => esc_html__( 'You are receiving updates.', 'gt-pure' ),
+				'invalid_desc' => esc_html__( 'Please make sure you have not reached site limits and/or expiration date.', 'gt-pure' ),
+				'expired_desc' => esc_html__( 'Your license has expired, renew today to continue getting updates and support!', 'gt-pure' ),
 			);
 
 			// Set License status.
-			$this->status = gt_drive_get_option( 'license_status' );
+			$this->status = gt_pure_get_option( 'license_status' );
 
 			parent::__construct( $manager, $id, $args );
 		}
@@ -78,7 +78,7 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			<div class="customize-license-control" data-l10n="<?php echo esc_attr( $l10n ); ?>" data-status="<?php echo esc_attr( $this->status ); ?>">
 
-				<span class="customize-control-title"><?php echo esc_html__( 'License Status', 'gt-drive' ); ?></span>
+				<span class="customize-control-title"><?php echo esc_html__( 'License Status', 'gt-pure' ); ?></span>
 				<div class="license-status"></div>
 				<div class="license-description description"></div>
 

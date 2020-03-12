@@ -2,13 +2,13 @@
 /**
  * License Key
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
  * License Key Class
  */
-class GT_Drive_License_Key {
+class GT_Pure_License_Key {
 	/**
 	 * Actions Setup
 	 *
@@ -17,10 +17,10 @@ class GT_Drive_License_Key {
 	static function setup() {
 
 		// Define Product ID.
-		define( 'GT_DRIVE_PRODUCT_ID', 336 );
+		define( 'GT_PURE_PRODUCT_ID', 336 );
 
 		// Define Update API URL.
-		define( 'GT_DRIVE_STORE_API_URL', 'https://germanthemes.de' );
+		define( 'GT_PURE_STORE_API_URL', 'https://germanthemes.de' );
 
 		// Add License API functions.
 		add_action( 'wp_ajax_gt_activate_license', array( __CLASS__, 'activate_license' ) );
@@ -48,12 +48,12 @@ class GT_Drive_License_Key {
 		$api_params = array(
 			'edd_action' => 'activate_license',
 			'license'    => $license,
-			'item_id'    => GT_DRIVE_PRODUCT_ID,
+			'item_id'    => GT_PURE_PRODUCT_ID,
 			'url'        => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( GT_DRIVE_STORE_API_URL, array(
+		$response = wp_remote_post( GT_PURE_STORE_API_URL, array(
 			'timeout'   => 25,
 			'sslverify' => true,
 			'body'      => $api_params,
@@ -69,14 +69,14 @@ class GT_Drive_License_Key {
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
 
 		// Get theme options from database.
-		$theme_options = gt_drive_theme_options();
+		$theme_options = gt_pure_theme_options();
 
 		// Update License Key and Status.
 		$theme_options['license_status'] = $license_data->license;
 		$theme_options['license_key']    = $license;
-		update_option( 'gt_drive_theme_options', $theme_options );
+		update_option( 'gt_pure_theme_options', $theme_options );
 
-		delete_transient( 'gt_drive_license_check' );
+		delete_transient( 'gt_pure_license_check' );
 
 		echo $license_data->license;
 
@@ -103,12 +103,12 @@ class GT_Drive_License_Key {
 		$api_params = array(
 			'edd_action' => 'deactivate_license',
 			'license'    => $license,
-			'item_id'    => GT_DRIVE_PRODUCT_ID,
+			'item_id'    => GT_PURE_PRODUCT_ID,
 			'url'        => home_url(),
 		);
 
 		// Call the custom API.
-		$response = wp_remote_post( GT_DRIVE_STORE_API_URL, array(
+		$response = wp_remote_post( GT_PURE_STORE_API_URL, array(
 			'timeout'   => 25,
 			'sslverify' => true,
 			'body'      => $api_params,
@@ -121,13 +121,13 @@ class GT_Drive_License_Key {
 		}
 
 		// Get theme options from database.
-		$theme_options = gt_drive_theme_options();
+		$theme_options = gt_pure_theme_options();
 
 		// Update License Status.
 		$theme_options['license_status'] = 'inactive';
-		update_option( 'gt_drive_theme_options', $theme_options );
+		update_option( 'gt_pure_theme_options', $theme_options );
 
-		delete_transient( 'gt_drive_license_check' );
+		delete_transient( 'gt_pure_license_check' );
 
 		echo 'inactive';
 
@@ -146,13 +146,13 @@ class GT_Drive_License_Key {
 			return;
 		}
 
-		$status = get_transient( 'gt_drive_license_check' );
+		$status = get_transient( 'gt_pure_license_check' );
 
 		// Run the license check a maximum of once per day.
 		if ( false === $status ) {
 
 			// Get theme options from database.
-			$theme_options = gt_drive_theme_options();
+			$theme_options = gt_pure_theme_options();
 			$license_key   = $theme_options['license_key'];
 
 			if ( '' !== $license_key and 'inactive' !== $theme_options['license_status'] ) {
@@ -161,12 +161,12 @@ class GT_Drive_License_Key {
 				$api_params = array(
 					'edd_action' => 'check_license',
 					'license'    => $license_key,
-					'item_id'    => GT_DRIVE_PRODUCT_ID,
+					'item_id'    => GT_PURE_PRODUCT_ID,
 					'url'        => home_url(),
 				);
 
 				// Call the custom API.
-				$response = wp_remote_post( GT_DRIVE_STORE_API_URL, array(
+				$response = wp_remote_post( GT_PURE_STORE_API_URL, array(
 					'timeout'   => 25,
 					'sslverify' => true,
 					'body'      => $api_params,
@@ -189,10 +189,10 @@ class GT_Drive_License_Key {
 
 			// Update License Status.
 			$theme_options['license_status'] = $status;
-			update_option( 'gt_drive_theme_options', $theme_options );
+			update_option( 'gt_pure_theme_options', $theme_options );
 
 			// Cache license check with transient.
-			set_transient( 'gt_drive_license_check', $status, DAY_IN_SECONDS );
+			set_transient( 'gt_pure_license_check', $status, DAY_IN_SECONDS );
 		}
 
 		return $status;
@@ -200,4 +200,4 @@ class GT_Drive_License_Key {
 }
 
 // Run Class.
-GT_Drive_License_Key::setup();
+GT_Pure_License_Key::setup();

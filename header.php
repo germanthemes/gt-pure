@@ -5,7 +5,7 @@
  * Displays all of the <head> section and everything up till <main>
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 ?><!DOCTYPE html>
@@ -23,10 +23,10 @@
 <?php do_action( 'wp_body_open' ); ?>
 
 	<div id="page" class="site">
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gt-drive' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'gt-pure' ); ?></a>
 
-		<?php do_action( 'gt_drive_before_header' ); ?>
-		<?php gt_drive_widget_area( 'before-header' ); ?>
+		<?php do_action( 'gt_pure_before_header' ); ?>
+		<?php gt_pure_widget_area( 'before-header' ); ?>
 
 		<header id="masthead" class="site-header" role="banner">
 
@@ -38,18 +38,18 @@
 
 			</div><!-- .header-main -->
 
-			<?php gt_drive_header_search_form(); ?>
+			<?php gt_pure_header_search_form(); ?>
 
 		</header><!-- #masthead -->
 
-		<?php gt_drive_widget_area( 'after-header' ); ?>
-		<?php do_action( 'gt_drive_after_header' ); ?>
+		<?php gt_pure_widget_area( 'after-header' ); ?>
+		<?php do_action( 'gt_pure_after_header' ); ?>
 
-		<?php gt_drive_header_image(); ?>
+		<?php gt_pure_header_image(); ?>
 
 		<div id="content" class="site-content">
 
 			<main id="main" class="site-main" role="main">
 
-				<?php do_action( 'gt_drive_before_content' ); ?>
-				<?php gt_drive_widget_area( 'before-content' ); ?>
+				<?php do_action( 'gt_pure_before_content' ); ?>
+				<?php gt_pure_widget_area( 'before-content' ); ?>

@@ -2,7 +2,7 @@
 /**
  * Custom Font Control for the Customizer
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -13,14 +13,14 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 	/**
 	 * Displays a custom Font control. Allows to switch fonts for particular elements on the theme.
 	 */
-	class GT_Drive_Customize_Font_Control extends WP_Customize_Control {
+	class GT_Pure_Customize_Font_Control extends WP_Customize_Control {
 
 		/**
 		 * Declare the control type. Critical for JS constructor.
 		 *
 		 * @var string
 		 */
-		public $type = 'gt_drive_custom_font';
+		public $type = 'gt_pure_custom_font';
 
 		/**
 		 * Localization Strings.
@@ -48,13 +48,13 @@ if ( class_exists( 'WP_Customize_Control' ) ) :
 
 			// Make Buttons translateable.
 			$this->l10n = array(
-				'previous' => esc_html__( 'Previous Font', 'gt-drive' ),
-				'next'     => esc_html__( 'Next Font', 'gt-drive' ),
-				'standard' => esc_html_x( 'Default', 'default font button', 'gt-drive' ),
+				'previous' => esc_html__( 'Previous Font', 'gt-pure' ),
+				'next'     => esc_html__( 'Next Font', 'gt-pure' ),
+				'standard' => esc_html_x( 'Default', 'default font button', 'gt-pure' ),
 			);
 
 			// Set Fonts.
-			$this->fonts = GT_Drive_Custom_Fonts::get_available_fonts();
+			$this->fonts = GT_Pure_Custom_Fonts::get_available_fonts();
 
 			parent::__construct( $manager, $id, $args );
 		}

@@ -3,7 +3,7 @@
  * Template part for displaying a message that posts cannot be found.
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 ?>
 
@@ -11,7 +11,7 @@
 
 	<header class="page-header entry-header">
 
-		<h1 class="page-title entry-title"><?php esc_html_e( 'Nothing Found', 'gt-drive' ); ?></h1>
+		<h1 class="page-title entry-title"><?php esc_html_e( 'Nothing Found', 'gt-pure' ); ?></h1>
 
 	</header><!-- .entry-header -->
 
@@ -20,16 +20,16 @@
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
-			printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'gt-drive' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) );
+			printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'gt-pure' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) );
 
 		elseif ( is_search() ) :
 
-			printf( '<p>%s</p>', esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'gt-drive' ) );
+			printf( '<p>%s</p>', esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'gt-pure' ) );
 			get_search_form();
 
 		else :
 
-			printf( '<p>%s</p>', esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'gt-drive' ) );
+			printf( '<p>%s</p>', esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'gt-pure' ) );
 			get_search_form();
 
 		endif;

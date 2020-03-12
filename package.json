@@ -1,19 +1,19 @@
 {
-  "name": "gt-drive",
+  "name": "gt-pure",
   "version": "1.0.0",
-  "description": "GT Drive WordPress Theme",
+  "description": "GT Pure WordPress Theme",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "export": "git archive HEAD -9 --prefix gt-drive/ --format=zip > ../../gt-drive.zip"
+    "export": "git archive HEAD -9 --prefix gt-pure/ --format=zip > ../../gt-pure.zip"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Netzberufler/gt-drive.git"
+    "url": "git+https://github.com/Netzberufler/gt-pure.git"
   },
   "author": "GermanThemes",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/Netzberufler/gt-drive",
+  "homepage": "https://github.com/Netzberufler/gt-pure",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",

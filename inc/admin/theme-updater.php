@@ -2,7 +2,7 @@
 /**
  * Theme Updater
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -11,7 +11,7 @@
  * @author Easy Digital Downloads
  * @version 1.0.3
  */
-class GT_Drive_Theme_Updater {
+class GT_Pure_Theme_Updater {
 
 	private $remote_api_url;
 	private $request_data;

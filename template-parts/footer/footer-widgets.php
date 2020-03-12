@@ -3,7 +3,7 @@
  * Footer Widgets
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 
@@ -20,13 +20,13 @@ if ( is_active_sidebar( 'footer-column-1' )
 
 			<div class="footer-widgets-columns">
 
-				<?php gt_drive_widget_area( 'footer-column-1', 'footer-widget-column' ); ?>
+				<?php gt_pure_widget_area( 'footer-column-1', 'footer-widget-column' ); ?>
 
-				<?php gt_drive_widget_area( 'footer-column-2', 'footer-widget-column' ); ?>
+				<?php gt_pure_widget_area( 'footer-column-2', 'footer-widget-column' ); ?>
 
-				<?php gt_drive_widget_area( 'footer-column-3', 'footer-widget-column' ); ?>
+				<?php gt_pure_widget_area( 'footer-column-3', 'footer-widget-column' ); ?>
 
-				<?php gt_drive_widget_area( 'footer-column-4', 'footer-widget-column' ); ?>
+				<?php gt_pure_widget_area( 'footer-column-4', 'footer-widget-column' ); ?>
 
 			</div>
 

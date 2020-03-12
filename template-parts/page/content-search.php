@@ -3,7 +3,7 @@
  * The template for displaying articles in the search loop
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 ?>
 

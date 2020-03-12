@@ -5,14 +5,14 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 get_header();
 
 if ( have_posts() ) :
 
-	gt_drive_search_header();
+	gt_pure_search_header();
 
 	while ( have_posts() ) :
 		the_post();
@@ -21,7 +21,7 @@ if ( have_posts() ) :
 
 	endwhile;
 
-	gt_drive_pagination();
+	gt_pure_pagination();
 
 else :
 

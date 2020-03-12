@@ -3,7 +3,7 @@
  * Footer Menus
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 
 
@@ -16,7 +16,7 @@ if ( has_nav_menu( 'footer' ) or has_nav_menu( 'social-footer' ) ) : ?>
 
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
 
-				<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-drive' ); ?>">
+				<nav class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'gt-pure' ); ?>">
 
 					<?php
 					wp_nav_menu( array(
@@ -37,7 +37,7 @@ if ( has_nav_menu( 'footer' ) or has_nav_menu( 'social-footer' ) ) : ?>
 
 				<div class="footer-social-icons social-icons-nav">
 
-					<?php gt_drive_social_icons_menu( 'social-footer' ); ?>
+					<?php gt_pure_social_icons_menu( 'social-footer' ); ?>
 
 				</div>
 

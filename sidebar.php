@@ -2,11 +2,11 @@
 /**
  * The sidebar containing the widget area on blog pages.
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 // Check if Blog Sidebar has widgets.
-if ( is_active_sidebar( 'sidebar-1' ) && gt_drive_is_blog_page() ) : ?>
+if ( is_active_sidebar( 'sidebar-1' ) && gt_pure_is_blog_page() ) : ?>
 
 	<section id="secondary" class="sidebar widget-area" role="complementary">
 

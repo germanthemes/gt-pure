@@ -2,7 +2,7 @@
 /**
  * Theme Color Settings
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -10,112 +10,112 @@
  *
  * @param object $wp_customize / Customizer Object.
  */
-function gt_drive_customize_register_theme_color_settings( $wp_customize ) {
+function gt_pure_customize_register_theme_color_settings( $wp_customize ) {
 
 	// Add Section for Theme Colors.
-	$wp_customize->add_section( 'gt_drive_section_theme_colors', array(
-		'title'    => esc_html__( 'Theme Colors', 'gt-drive' ),
+	$wp_customize->add_section( 'gt_pure_section_theme_colors', array(
+		'title'    => esc_html__( 'Theme Colors', 'gt-pure' ),
 		'priority' => 40,
-		'panel'    => 'gt_drive_options_panel',
+		'panel'    => 'gt_pure_options_panel',
 	) );
 
 	// Get Default Colors from settings.
-	$default = gt_drive_default_options();
+	$default = gt_pure_default_options();
 
 	// Add Link Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[link_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[link_color]', array(
 		'default'           => $default['link_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[link_color]', array(
-			'label'    => esc_html_x( 'Links', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[link_color]',
+		$wp_customize, 'gt_pure_theme_options[link_color]', array(
+			'label'    => esc_html_x( 'Links', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[link_color]',
 			'priority' => 10,
 		)
 	) );
 
 	// Add Link Hover Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[link_hover_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[link_hover_color]', array(
 		'default'           => $default['link_hover_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[link_hover_color]', array(
-			'label'    => esc_html_x( 'Link Hover', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[link_hover_color]',
+		$wp_customize, 'gt_pure_theme_options[link_hover_color]', array(
+			'label'    => esc_html_x( 'Link Hover', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[link_hover_color]',
 			'priority' => 20,
 		)
 	) );
 
 	// Add Header Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[header_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[header_color]', array(
 		'default'           => $default['header_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[header_color]', array(
-			'label'    => esc_html_x( 'Header', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[header_color]',
+		$wp_customize, 'gt_pure_theme_options[header_color]', array(
+			'label'    => esc_html_x( 'Header', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[header_color]',
 			'priority' => 30,
 		)
 	) );
 
 	// Add Titles Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[title_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[title_color]', array(
 		'default'           => $default['title_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[title_color]', array(
-			'label'    => esc_html_x( 'Titles', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[title_color]',
+		$wp_customize, 'gt_pure_theme_options[title_color]', array(
+			'label'    => esc_html_x( 'Titles', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[title_color]',
 			'priority' => 40,
 		)
 	) );
 
 	// Add Title Hover Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[title_hover_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[title_hover_color]', array(
 		'default'           => $default['title_hover_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[title_hover_color]', array(
-			'label'    => esc_html_x( 'Title Hover', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[title_hover_color]',
+		$wp_customize, 'gt_pure_theme_options[title_hover_color]', array(
+			'label'    => esc_html_x( 'Title Hover', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[title_hover_color]',
 			'priority' => 50,
 		)
 	) );
 
 	// Add Footer Color setting.
-	$wp_customize->add_setting( 'gt_drive_theme_options[footer_color]', array(
+	$wp_customize->add_setting( 'gt_pure_theme_options[footer_color]', array(
 		'default'           => $default['footer_color'],
 		'type'              => 'option',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'gt_drive_theme_options[footer_color]', array(
-			'label'    => esc_html_x( 'Footer Widgets', 'Color Option', 'gt-drive' ),
-			'section'  => 'gt_drive_section_theme_colors',
-			'settings' => 'gt_drive_theme_options[footer_color]',
+		$wp_customize, 'gt_pure_theme_options[footer_color]', array(
+			'label'    => esc_html_x( 'Footer Widgets', 'Color Option', 'gt-pure' ),
+			'section'  => 'gt_pure_section_theme_colors',
+			'settings' => 'gt_pure_theme_options[footer_color]',
 			'priority' => 60,
 		)
 	) );
 }
-add_action( 'customize_register', 'gt_drive_customize_register_theme_color_settings' );
+add_action( 'customize_register', 'gt_pure_customize_register_theme_color_settings' );

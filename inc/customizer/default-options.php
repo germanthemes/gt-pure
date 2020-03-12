@@ -4,7 +4,7 @@
  *
  * Uses sane defaults in case the user has not configured any theme options yet.
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /**
@@ -12,10 +12,10 @@
 *
 * @return mixed
 */
-function gt_drive_get_option( $option_name = '' ) {
+function gt_pure_get_option( $option_name = '' ) {
 
 	// Get all Theme Options from Database.
-	$theme_options = gt_drive_theme_options();
+	$theme_options = gt_pure_theme_options();
 
 	// Return single option.
 	if ( isset( $theme_options[ $option_name ] ) ) {
@@ -31,13 +31,13 @@ function gt_drive_get_option( $option_name = '' ) {
  *
  * @return array
  */
-function gt_drive_theme_options() {
+function gt_pure_theme_options() {
 
 	// Merge theme options array from database with default options array.
-	$theme_options = wp_parse_args( get_option( 'gt_drive_theme_options', array() ), gt_drive_default_options() );
+	$theme_options = wp_parse_args( get_option( 'gt_pure_theme_options', array() ), gt_pure_default_options() );
 
 	// Return theme options.
-	return apply_filters( 'gt_drive_theme_options', $theme_options );
+	return apply_filters( 'gt_pure_theme_options', $theme_options );
 }
 
 
@@ -46,7 +46,7 @@ function gt_drive_theme_options() {
  *
  * @return array
  */
-function gt_drive_default_options() {
+function gt_pure_default_options() {
 
 	$default_options = array(
 		'retina_logo'        => false,
@@ -82,5 +82,5 @@ function gt_drive_default_options() {
 		'license_status'     => 'inactive',
 	);
 
-	return apply_filters( 'gt_drive_default_options', $default_options );
+	return apply_filters( 'gt_pure_default_options', $default_options );
 }

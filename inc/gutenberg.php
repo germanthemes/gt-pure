@@ -2,7 +2,7 @@
 /**
  * Add theme support for the Gutenberg Editor
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 
@@ -11,110 +11,110 @@
  *
  * @return void
  */
-function gt_drive_gutenberg_support() {
+function gt_pure_gutenberg_support() {
 
 	// Get theme options from database.
-	$theme_options = gt_drive_theme_options();
+	$theme_options = gt_pure_theme_options();
 
 	// Add theme support for wide and full images.
 	add_theme_support( 'align-wide' );
 
 	// Add theme support for block color palette.
-	add_theme_support( 'editor-color-palette', apply_filters( 'gt_drive_editor_color_palette_args', array(
+	add_theme_support( 'editor-color-palette', apply_filters( 'gt_pure_editor_color_palette_args', array(
 		array(
-			'name'  => esc_html_x( 'Primary', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Primary', 'block color', 'gt-pure' ),
 			'slug'  => 'primary',
 			'color' => esc_html( $theme_options['primary_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Secondary', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Secondary', 'block color', 'gt-pure' ),
 			'slug'  => 'secondary',
 			'color' => esc_html( $theme_options['secondary_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Accent', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Accent', 'block color', 'gt-pure' ),
 			'slug'  => 'accent',
 			'color' => esc_html( $theme_options['accent_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Highlight', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Highlight', 'block color', 'gt-pure' ),
 			'slug'  => 'highlight',
 			'color' => esc_html( $theme_options['highlight_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'White', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'White', 'block color', 'gt-pure' ),
 			'slug'  => 'white',
 			'color' => '#ffffff',
 		),
 		array(
-			'name'  => esc_html_x( 'Light Gray', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Light Gray', 'block color', 'gt-pure' ),
 			'slug'  => 'light-gray',
 			'color' => esc_html( $theme_options['light_gray_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Gray', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Gray', 'block color', 'gt-pure' ),
 			'slug'  => 'gray',
 			'color' => esc_html( $theme_options['gray_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Dark Gray', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Dark Gray', 'block color', 'gt-pure' ),
 			'slug'  => 'dark-gray',
 			'color' => esc_html( $theme_options['dark_gray_color'] ),
 		),
 		array(
-			'name'  => esc_html_x( 'Black', 'block color', 'gt-drive' ),
+			'name'  => esc_html_x( 'Black', 'block color', 'gt-pure' ),
 			'slug'  => 'black',
 			'color' => '#000000',
 		),
 	) ) );
 
 	// Add theme support for font sizes.
-	add_theme_support( 'editor-font-sizes', apply_filters( 'gt_drive_editor_font_sizes_args', array(
+	add_theme_support( 'editor-font-sizes', apply_filters( 'gt_pure_editor_font_sizes_args', array(
 		array(
-			'name' => esc_html_x( 'Small', 'block font size', 'gt-drive' ),
+			'name' => esc_html_x( 'Small', 'block font size', 'gt-pure' ),
 			'size' => 16,
 			'slug' => 'small',
 		),
 		array(
-			'name' => esc_html_x( 'Medium', 'block font size', 'gt-drive' ),
+			'name' => esc_html_x( 'Medium', 'block font size', 'gt-pure' ),
 			'size' => 24,
 			'slug' => 'medium',
 		),
 		array(
-			'name' => esc_html_x( 'Large', 'block font size', 'gt-drive' ),
+			'name' => esc_html_x( 'Large', 'block font size', 'gt-pure' ),
 			'size' => 36,
 			'slug' => 'large',
 		),
 		array(
-			'name' => esc_html_x( 'Extra Large', 'block font size', 'gt-drive' ),
+			'name' => esc_html_x( 'Extra Large', 'block font size', 'gt-pure' ),
 			'size' => 48,
 			'slug' => 'extra-large',
 		),
 		array(
-			'name' => esc_html_x( 'Huge', 'block font size', 'gt-drive' ),
+			'name' => esc_html_x( 'Huge', 'block font size', 'gt-pure' ),
 			'size' => 64,
 			'slug' => 'huge',
 		),
 	) ) );
 }
-add_action( 'after_setup_theme', 'gt_drive_gutenberg_support' );
+add_action( 'after_setup_theme', 'gt_pure_gutenberg_support' );
 
 
 /**
  * Enqueue block styles and scripts for Gutenberg Editor.
  */
-function gt_drive_block_editor_assets() {
+function gt_pure_block_editor_assets() {
 
 	// Get Theme Version.
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Enqueue Editor Styling.
-	wp_enqueue_style( 'gt-drive-editor-styles', get_theme_file_uri( '/assets/css/editor-styles.css' ), array(), $theme_version, 'all' );
+	wp_enqueue_style( 'gt-pure-editor-styles', get_theme_file_uri( '/assets/css/editor-styles.css' ), array(), $theme_version, 'all' );
 
 	// Enqueue Theme Settings Editor plugin.
-	wp_enqueue_script( 'gt-drive-editor-theme-settings', get_theme_file_uri( '/assets/js/editor-theme-settings.js' ), array( 'wp-blocks', 'wp-element', 'wp-edit-post' ), $theme_version );
+	wp_enqueue_script( 'gt-pure-editor-theme-settings', get_theme_file_uri( '/assets/js/editor-theme-settings.js' ), array( 'wp-blocks', 'wp-element', 'wp-edit-post' ), $theme_version );
 }
-add_action( 'enqueue_block_editor_assets', 'gt_drive_block_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'gt_pure_block_editor_assets' );
 
 
 /**
@@ -122,7 +122,7 @@ add_action( 'enqueue_block_editor_assets', 'gt_drive_block_editor_assets' );
  *
  * @return array $editor_settings
  */
-function gt_drive_block_editor_settings( $editor_settings ) {
+function gt_pure_block_editor_settings( $editor_settings ) {
 	// Remove editor styling.
 	if ( ! current_theme_supports( 'editor-styles' ) ) {
 		$editor_settings['styles'] = '';
@@ -130,13 +130,13 @@ function gt_drive_block_editor_settings( $editor_settings ) {
 
 	return $editor_settings;
 }
-add_filter( 'block_editor_settings', 'gt_drive_block_editor_settings', 11 );
+add_filter( 'block_editor_settings', 'gt_pure_block_editor_settings', 11 );
 
 
 /**
  * Add body classes in Gutenberg Editor.
  */
-function gt_drive_gutenberg_add_admin_body_class( $classes ) {
+function gt_pure_gutenberg_add_admin_body_class( $classes ) {
 	global $post;
 	$current_screen = get_current_screen();
 
@@ -162,4 +162,4 @@ function gt_drive_gutenberg_add_admin_body_class( $classes ) {
 
 	return $classes;
 }
-add_filter( 'admin_body_class', 'gt_drive_gutenberg_add_admin_body_class' );
+add_filter( 'admin_body_class', 'gt_pure_gutenberg_add_admin_body_class' );

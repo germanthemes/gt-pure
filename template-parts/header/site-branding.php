@@ -3,7 +3,7 @@
  * Header Main
  *
  * @version 1.0
- * @package GT Drive
+ * @package GT Pure
  */
 ?>
 
@@ -18,8 +18,8 @@
 	<?php endif; ?>
 
 	<div class="site-info">
-		<?php gt_drive_site_title(); ?>
-		<?php gt_drive_site_description(); ?>
+		<?php gt_pure_site_title(); ?>
+		<?php gt_pure_site_description(); ?>
 	</div>
 
 </div><!-- .site-branding -->

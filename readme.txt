@@ -1,6 +1,6 @@
-=== GT Drive ===
+=== GT Pure ===
 Author URI: https://germanthemes.de/en/
-Theme URI: https://germanthemes.de/en/themes/gt-drive/
+Theme URI: https://germanthemes.de/en/themes/gt-pure/
 Contributors: germanthemes
 Tags: custom-background, custom-logo, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, translation-ready, theme-options, one-column
 Requires at least: 5.2
@@ -8,19 +8,19 @@ Tested up to: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-GT Drive is a modern Business WordPress Theme.
+GT Pure is a modern Business WordPress Theme.
 
 == Description ==
 
-GT Drive is a modern Business WordPress Theme created with the new WordPress Block Editor in mind. The theme comes with Customizer options for colors and typography and a widgetized footer area. It is lightweight, GDPR-ready and works best in combination with our free GT Blocks plugin.
+GT Pure is a modern Business WordPress Theme created with the new WordPress Block Editor in mind. The theme comes with Customizer options for colors and typography and a widgetized footer area. It is lightweight, GDPR-ready and works best in combination with our free GT Blocks plugin.
 
-For more information about GT Drive please go to https://germanthemes.de/themes/gt-drive/
+For more information about GT Pure please go to https://germanthemes.de/themes/gt-pure/
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Click on the 'Upload Theme' button to upload the ZIP-file of the theme.
-3. Go to https://germanthemes.de/en/docs/gt-drive-documentation/ for a guide on how to use and customize this theme.
+3. Go to https://germanthemes.de/en/docs/gt-pure-documentation/ for a guide on how to use and customize this theme.
 
 == Changelog ==
 
@@ -29,8 +29,8 @@ For more information about GT Drive please go to https://germanthemes.de/themes/
 
 == Copyright ==
 
-GT Drive WordPress Theme, Copyright 2019 GermanThemes.de
-GT Drive is distributed under the terms of the GNU GPL
+GT Pure WordPress Theme, Copyright 2019 GermanThemes.de
+GT Pure is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ GNU General Public License for more details.
 
 == Ressources ==
 
-GT Drive uses and bundles the following third-party resources:
+GT Pure uses and bundles the following third-party resources:
 
 1. Genericons Neue - https://github.com/Automattic/genericons-neue
 License: Distributed under the terms of the GPLv2 (https://www.gnu.org/licenses/gpl-2.0.html)

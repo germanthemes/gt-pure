@@ -5,7 +5,7 @@
  *
  * Description: A custom template for displaying a fullwidth layout.
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 get_header();

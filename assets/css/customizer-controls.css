@@ -3,39 +3,39 @@
  *
  * Adjusts styling for theme option controls in the Customizer
  *
- * @package GT Drive
+ * @package GT Pure
  */
 
 /* Settings */
-#customize-control-gt_drive_theme_options-site_description {
+#customize-control-gt_pure_theme_options-site_description {
 	margin-bottom: 16px;
 }
 
-#customize-control-gt_drive_theme_options-site_title {
+#customize-control-gt_pure_theme_options-site_title {
 	margin-bottom: 4px;
 }
 
-#customize-control-gt_drive_theme_options-retina_logo_title,
-#customize-control-gt_drive_theme_options-header_search_title {
+#customize-control-gt_pure_theme_options-retina_logo_title,
+#customize-control-gt_pure_theme_options-header_search_title {
 	margin-bottom: 0;
 }
 
-#customize-control-gt_drive_theme_options-scroll_top_title,
-#customize-control-gt_drive_theme_options-post_details,
-#customize-control-gt_drive_theme_options-single_post {
+#customize-control-gt_pure_theme_options-scroll_top_title,
+#customize-control-gt_pure_theme_options-post_details,
+#customize-control-gt_pure_theme_options-single_post {
 	margin-top: 16px;
 	margin-bottom: 0;
 }
 
-#customize-control-gt_drive_theme_options-meta_date,
-#customize-control-gt_drive_theme_options-meta_author,
-#customize-control-gt_drive_theme_options-meta_categories,
-#customize-control-gt_drive_theme_options-meta_tags {
+#customize-control-gt_pure_theme_options-meta_date,
+#customize-control-gt_pure_theme_options-meta_author,
+#customize-control-gt_pure_theme_options-meta_categories,
+#customize-control-gt_pure_theme_options-meta_tags {
 	margin-bottom: 4px;
 }
 
 /* Custom Font Control */
-.customize-control-gt_drive_custom_font {
+.customize-control-gt_pure_custom_font {
 	margin-top: 24px;
 }
 
@@ -43,37 +43,37 @@
 	margin-top: 0;
 }
 
-.customize-control-gt_drive_custom_font .actions .button.previous {
+.customize-control-gt_pure_custom_font .actions .button.previous {
 	margin-right: 4px;
 }
 
-.customize-control-gt_drive_custom_font .actions .button.standard {
+.customize-control-gt_pure_custom_font .actions .button.standard {
 	float: right;
 }
 
-.customize-control-gt_drive_custom_font select {
+.customize-control-gt_pure_custom_font select {
 	width: 100%;
 }
 
-.customize-control-gt_drive_custom_font div:hover {
+.customize-control-gt_pure_custom_font div:hover {
 	cursor: default;
 }
 
-.customize-control-gt_drive_custom_font .actions .button:hover {
+.customize-control-gt_pure_custom_font .actions .button:hover {
 	cursor: pointer;
 }
 
 /* Typography Checkbox Controls */
-#sub-accordion-section-gt_drive_section_typography .customize-control-checkbox {
+#sub-accordion-section-gt_pure_section_typography .customize-control-checkbox {
 	margin-bottom: 0;
 }
 
 /* License Control */
-.customize-control-gt_drive_license_key label {
+.customize-control-gt_pure_license_key label {
 	margin-top: 16px;
 }
 
-.customize-control-gt_drive_license_key .license-status span {
+.customize-control-gt_pure_license_key .license-status span {
 	display: inline-block;
 	margin: 0 0 12px;
 	padding: 5px 10px;
@@ -84,16 +84,16 @@
 	text-transform: uppercase;
 }
 
-.customize-control-gt_drive_license_key .license-status .inactive {
+.customize-control-gt_pure_license_key .license-status .inactive {
 	background: #444;
 }
 
-.customize-control-gt_drive_license_key .license-status .valid {
+.customize-control-gt_pure_license_key .license-status .valid {
 	background: green;
 }
 
-.customize-control-gt_drive_license_key .license-status .invalid,
-.customize-control-gt_drive_license_key .license-status .expired {
+.customize-control-gt_pure_license_key .license-status .invalid,
+.customize-control-gt_pure_license_key .license-status .expired {
 	background: red;
 }
 
